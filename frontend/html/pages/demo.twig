@@ -1,0 +1,81 @@
+{% extends "../layout/_layout.twig" %}
+
+{# Настройки #} 
+{% block title %}Demo page | Example.com {% endblock %}
+{% block body_class %}inner-page{% endblock %}
+
+
+
+{% block main %}
+    <div class="l-container">
+
+        <div class="breadcrumbs">
+            <a href="/">Home</a>
+            <span>Demo</span>
+        </div>  
+        
+        <h1>Demo</h1>
+
+        <div id="app" class="js-vue"></div>
+
+        <a class="btn-primary js-ajax" data-class="-callback" href="modal-ajax-text.html"><span>Callback</span></a>
+
+        <a href="#button" class="js-anchor">Scroll to button with modal</a>
+        <hr style="margin: 30px 0">
+        <div class="product-buy__count">
+            <input class="js-custom-number" type="text" pattern="^[ 0-9]+$" value="1">
+        </div>
+
+        {# {% include '../demo/_example--masonry.twig' %}  #}
+
+        {% include '../demo/_example--spoiler-list.twig' %} 
+
+        <hr style="margin: 30px 0">
+
+        {# кнопки #}
+        {% include '../demo/_buttons.twig' %}
+
+        <hr style="margin: 30px 0">
+        
+        <h2 id="button">Buttons with modal</h2>
+        {# .js-ajax  - к этому классу цепляется скрипт #}
+        {# href || data-href  - ссылка на всплывашку #}
+        {# data-class - класс, который добавиться к всплывашке #}
+        {# data-text - текст, который добавится в textarea формы #}
+        <a class="btn-primary js-ajax" data-class="-callback" href="modal-callback.html"><span>Callback</span></a>
+        <button class="btn-primary js-ajax" data-class="-send-enquiry" data-href="modal-send-enquiry.html"><span>Send Enquiry</span></button>
+        <button class="btn-primary js-ajax" data-class="-send-enquiry" data-href="modal-send-enquiry.html" data-text="Some text"><span>Send Enquiry with text</span></button>
+
+        <hr style="margin: 30px 0">
+
+        {# forms #}
+        {% include '../demo/_forms.twig' %}
+
+        <hr style="margin: 30px 0">
+
+        {# соц иконки #}
+        {% include '../demo/_icons.twig' %}
+
+        <hr style="margin: 30px 0">
+
+        {# вставка видео с lazyload #}
+        {% include '../demo/_videos.twig' %}
+
+        <hr style="margin: 30px 0">
+        
+
+        <div class="grid">
+            <div class="col-1-1 col-xs-1-2 col-lg-1-4 order-4 order-sm-1">test 1</div>
+            <div class="col-1-1 col-xs-1-2 col-lg-1-4 display-none display-md-block order-3 order-sm-2">test 2</div>
+            <div class="col-1-1 col-xs-1-2 col-lg-1-4 order-2 order-sm-3">test 3</div>
+            <div class="col-1-1 col-xs-1-2 col-lg-1-4 order-1 order-sm-4">test 4</div>
+        </div>
+
+        
+        
+
+    </div>
+{% endblock %}
+
+
+

@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<!-- <html lang="ar" dir="rtl"> -->
+<head>
+    <meta charset="UTF-8">
+    <title>{% block title %}{% endblock %}</title>
+
+    <!-- preconnect analytics --> 
+    <link rel="preconnect dns-prefetch" href="https://www.googletagmanager.com">
+    <link rel="preconnect dns-prefetch" href="https://www.google-analytics.com">
+    <link rel="preconnect dns-prefetch" href="https://connect.facebook.net">
+    
+    <!-- preload fonts --> 
+    <link rel="preload" href="assets/fonts/OpenSans-Regular.woff2" as="font" crossorigin />
+    <link rel="preload" href="assets/fonts/OpenSans-SemiBold.woff2" as="font" crossorigin />
+    <link rel="preload" href="assets/fonts/OpenSans-Bold.woff2" as="font" crossorigin />
+
+    {% include './_head.twig' %}
+
+    {% block styles %}
+    <link rel="stylesheet" href="assets/build-dev/pages.css">
+    {% endblock %}
+</head>
+
+<body  class="{% block body_class %}inner-page{% endblock %}">
+
+{% set url = {
+    productsList: '/products-list.html',
+    productShow: '/products-show.html',
+    productsCompare: '/products-compare.html',
+
+    orderCart: '/order-cart.html',
+    orderCheckout: '/order-checkout.html',
+    orderSuccess: '/order-success.html',
+
+    galleryList: '/gallery-list.html',
+    galleryShow: '/gallery-show.html',
+
+    publicationList: '/publication-list.html',
+    publicationShow: '/publication-show.html',
+
+    reviewsList: '/reviews-list.html',
+    
+    contacts: '/contacts.html',
+    textpage: '/textpage.html',
+    userProfile: '/user-profile.html',
+    error404: '/error404.html',
+    faq: '/faq.html',
+
+    myProfieMain: '/my-profile--main.html',
+
+    demo: '/demo.html'
+} %} 
+ 
+<!-- begin wrapper -->
+<div class="l-wrapper">
+
+    <!-- begin header -->
+    {% block header %} {% include '../../assets/blocks/header/header.twig' %} {% endblock %}
+    <!-- end header -->
+
+    <!-- begin main -->
+    <main class="l-main">
+        {% block main %}
+            Content of the page...
+
+            {# <!-- Twig Documentation https://twig.symfony.com/doc/2.x/  -->
+            {% for user in users %}
+                <li>{{ user.username|e }}</li>
+            {% endfor %}
+
+            {% for i in 0..10 %}
+                * {{ i }}
+            {% endfor %}
+
+            {% for letter in 'a'..'z' %}
+                * {{ letter }}
+            {% endfor %} #}
+
+        {% endblock %}
+    </main><!-- end main -->
+
+    <!-- begin footer -->
+    {% block footer %} {% include '../../assets/blocks/footer/footer.twig' %} {% endblock %}
+    <!-- end footer -->
+
+</div><!-- end wrapper -->
+
+
+<button class="scroll-top js-scroll-top">
+    <img src="/assets/images/icons/scroll-top.svg" alt="to top">
+</button>
+
+{% block scripts %}
+    {#<script src="https://api-maps.yandex.ru/2.1/?lang=ru_RU" ></script>#}
+    <script src="assets/build-dev/pages.js"></script>
+{% endblock %}
+
+</body>
+</html>

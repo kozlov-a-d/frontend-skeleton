@@ -1,0 +1,87 @@
+@import '~styles/variables';
+@import '~styles/mixins';
+
+.instagram-widget {
+    $gap: 20px;
+    $img-width: 640px;
+    $img-height: 640px;
+
+    padding: 30px 0;
+    // background: rgb(236, 236, 236);
+
+    &__container {
+    }
+
+    &__header {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        margin-bottom: 20px;
+
+        h2 {
+            margin: 0;
+        }
+    }
+
+    &__content {
+    }
+
+    &__list {
+        @include grid($gap);
+    }
+
+    &__item {
+        @include grid-col(1, $gap);
+        margin-bottom: $gap/2;
+        display: flex;
+        flex-direction: column;
+        background: rgb(173, 171, 171);
+
+        @media (min-width: $sm) {
+            @include grid-col(1/2, $gap);
+        }
+
+        @media (min-width: $md) {
+            @include grid-col(1/3, $gap);
+        }
+
+        @media (min-width: $lg) {
+            @include grid-col(1/4, $gap);
+            margin-bottom: $gap;
+        }
+
+        &-img {
+            position: relative;
+            display: block;
+            @include l-block-ratio($img-height/$img-width);
+
+            &:hover {
+                &:after {
+                    opacity: 1;
+                }
+            }
+
+            img {
+                @include l-img-full;
+            }
+
+            &:after {
+                content: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' xmlns:xlink='http://www.w3.org/1999/xlink' width='20px' height='20px'%3E%3Cpath fill-rule='evenodd' fill='rgb(255, 255, 255)' d='M6.637,9.970 C6.637,8.144 8.122,6.663 9.954,6.663 C11.786,6.663 13.272,8.144 13.272,9.970 C13.272,11.797 11.786,13.278 9.954,13.278 C8.122,13.278 6.637,11.797 6.637,9.970 M4.844,9.970 C4.844,12.784 7.132,15.065 9.954,15.065 C12.777,15.065 15.065,12.784 15.065,9.970 C15.065,7.156 12.777,4.876 9.954,4.876 C7.132,4.876 4.844,7.156 4.844,9.970 M14.073,4.674 C14.073,5.331 14.607,5.865 15.267,5.865 C15.926,5.865 16.462,5.331 16.462,4.674 C16.462,4.017 15.927,3.484 15.267,3.484 C14.607,3.484 14.073,4.017 14.073,4.674 M5.933,18.046 C4.963,18.002 4.436,17.841 4.085,17.705 C3.201,17.362 2.538,16.701 2.196,15.822 C1.605,14.310 1.801,7.123 1.854,5.961 C1.906,4.822 2.136,3.781 2.940,2.977 C3.936,1.985 5.222,1.499 13.976,1.894 C15.119,1.946 16.163,2.175 16.969,2.977 C17.964,3.969 18.457,5.264 18.056,13.980 C18.012,14.947 17.849,15.472 17.713,15.822 C16.813,18.129 14.741,18.450 5.933,18.046 M5.851,0.109 C4.223,0.183 2.812,0.580 1.673,1.715 C0.529,2.854 0.136,4.270 0.063,5.880 C0.016,6.885 -0.252,14.478 0.525,16.469 C1.048,17.813 2.080,18.845 3.436,19.371 C4.069,19.616 4.792,19.783 5.851,19.831 C14.713,20.232 17.999,20.014 19.384,16.469 C19.630,15.838 19.799,15.117 19.846,14.061 C20.251,5.181 19.780,3.256 18.236,1.715 C17.010,0.493 15.570,-0.338 5.851,0.109 '/%3E%3C/svg%3E");
+                @include l-block-full;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                background: rgba(#207d38, 0.8);
+                pointer-events: none;
+                opacity: 0;
+                transition: opacity $transition-time $transition-ease;
+            }
+        }
+    }
+
+    &__btn {
+        &-more {
+            @include btn-primary;
+        }
+    }
+}

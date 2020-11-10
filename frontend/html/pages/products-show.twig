@@ -1,0 +1,28 @@
+{% extends "../layout/_layout.twig" %}
+
+{# Настройки #} 
+{% block title %}Products List page | Example.com {% endblock %}
+{% block body_class %}inner-page{% endblock %}
+
+
+{% block main %}
+    <div class="l-container">
+
+        <div class="breadcrumbs">
+            <a href="/">Home</a>
+            <span>This page</span>
+        </div>
+        
+        {% include '../../assets/blocks/ecommerce/product-show/product-show.twig' %} 
+
+        {% include '../../assets/blocks/ecommerce/product-show-tabs/product-show-tabs.twig' %} 
+
+        {# Recomended Products #}
+        {# .product-show-recommend #}
+        {% include '../../assets/blocks/ecommerce/product-widget-carousel/product-widget-carousel.twig' with {class: 'product-show-recommend', title: 'Recomended Products', products: products} %}
+
+    </div>
+{% endblock %}
+
+
+

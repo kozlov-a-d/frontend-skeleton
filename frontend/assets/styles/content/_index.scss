@@ -1,0 +1,37 @@
+@import '~styles/variables';
+@import '~styles/mixins';
+
+/**
+ * .btn-primary
+ * .btn-primary-border
+ * .btn-secondary
+ * .btn-secondary-border
+ * .btn-center
+ * .btn-fullwidth
+*/
+@import '~styles/content/buttons.scss';
+
+/**
+ * .btn-danger
+ * .btn-danger-border
+ * .btn-warn
+ * .btn-warn-border
+ * .btn-success
+ * .btn-success-border
+*/
+// @import '~styles/content/buttons.scss';
+
+/* .display-{breakpoint}-{value} */
+@import '~styles/content/display.scss';
+
+/* .grid .col-x-y */
+@import '~styles/content/grid.scss';
+@include grid-init(10); // задаем количество колонок по умолчанию
+
+/* .order-{breakpoint}-{value} */
+@import '~styles/content/order.scss';
+
+/* .response-img-{breakpoint} */
+@import '~styles/content/response-img.scss';
+
+@import '~styles/content/section.scss';

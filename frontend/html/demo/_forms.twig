@@ -1,0 +1,125 @@
+<h2>Forms</h2>
+<div class="demo-form">
+    {# <script src="https://www.google.com/recaptcha/api.js?render=6Le_PewUAAAAAKDyWbql5JIM-LYTNmDl-4LnBNAL"></script> #}
+    <!-- класс js-ajax - для отправки ajax'ом -->
+    <!-- data-goal-name, data-goal-category - имя и категория цели, при успешной отправке -->
+    <form action="/form-success.html" class="js-ajax" data-goal-name="Email Feedback" data-goal-category="Email">
+        <div class="form-feedback form-layout-item-row">
+            <div class="form-feedback__container">
+                <!-- <input type="text" class="js-recaptcha" data-sitekey="6Le_PewUAAAAAKDyWbql5JIM-LYTNmDl-4LnBNAL"> -->
+                <div class="js-recaptcha" data-sitekey="6Le_PewUAAAAAKDyWbql5JIM-LYTNmDl-4LnBNAL" data-theme="light" data-type="image" data-size="invisible" data-callback="recaptchaCallback"></div>
+
+                <div class="form-feedback__col">
+
+                    <div class="form-item -name">
+                        <span class="form-item__label">Name</span>
+                        <div class="form-item__field">
+                            <input type="text" placeholder="Name">
+                            <div class="form-item__error"></div>
+                        </div>
+                    </div>
+
+                    <div class="form-item -email">
+                        <span class="form-item__label">Email</span>
+                        <div class="form-item__field">
+                            <input type="email" placeholder="Email">
+                            <div class="form-item__error"></div>
+                        </div>
+                    </div>
+
+                    <div class="form-item -phone">
+                        <span class="form-item__label">Phone</span>
+                        <div class="form-item__field">
+                            <input type="phone" placeholder="Phone">
+                            <div class="form-item__error">
+                                <ul><li>Error</li></ul>
+                            </div>
+                        </div>
+                    </div>
+
+                </div><!-- end .form-feedback__col -->
+
+                <div class="form-feedback__col">
+
+                    <div class="form-item -password">
+                        <span class="form-item__label">Password</span>
+                        <div class="form-item__field">
+                            <input type="password">
+                            <div class="form-item__error"></div>
+                        </div>
+                    </div>
+
+                    <div class="form-item -date">
+                        <span class="form-item__label">Date</span>
+                        <div class="form-item__field">
+                            <input class="js-datepicker" type="text">
+                            <div class="form-item__error"></div>
+                        </div>
+                    </div>
+        
+                    <div class="form-item -time">
+                        <span class="form-item__label">Time</span>
+                        <div class="form-item__field">
+                            <input class="js-timepicker" type="text">
+                            <div class="form-item__error"></div>
+                        </div>
+                    </div>
+        
+                </div><!-- end .form-feedback__col -->
+
+                <div class="form-feedback__col-fullwidth">
+
+                    <div class="form-item -msg">
+                        <span class="form-item__label">Messages</span>
+                        <div class="form-item__field">
+                            <textarea placeholder="Messages"></textarea>
+                            <div class="form-item__error"></div>
+                        </div>
+                    </div>
+
+                    <div class="form-item -location">
+                        <span class="form-item__label">Location</span>
+                        <div class="form-item__field">
+                            <textarea placeholder="Messages"></textarea>
+                            <div class="form-item__error"></div>
+                        </div>
+                    </div>
+
+                </div><!-- end .form-feedback__col-fullwidth -->
+
+                <div class="form-feedback__col">
+                    <div class="form-item -upload">
+                        <span class="form-item__label">Upload file</span>
+                        <div class="form-item__field">
+                            <input class="js-custom-file" type="file">
+                            <div class="form-item__error"></div>
+                        </div>
+                    </div>
+                </div><!-- end .form-feedback__col -->
+
+                <div class="form-feedback__col">
+                    <div class="form-item -upload">
+                        <span class="form-item__label">Upload images with preview and remove btn</span>
+                        <div class="form-item__field">
+                            <input class="js-custom-file" type="file" data-preview="true" data-btn-clear="true">
+                            <div class="form-item__error"></div>
+                        </div>
+                    </div>
+                </div><!-- end .form-feedback__col -->
+
+                <div class="form-feedback__col-fullwidth">
+                    <div class="form-btns-container">
+                        <div class="form-privacy-police">
+                            Нажимая на кнопку, я даю согласие <br> на <a href="">обработку персональных данных</a>
+                        </div>
+                        <button class="form-feedback__btn-submit" type="submit">Submit</button>
+                    </div>
+                </div><!-- end .form-feedback__col-fullwidth -->
+                
+            </div>
+        </div>
+    </form>
+
+</div>
+
+

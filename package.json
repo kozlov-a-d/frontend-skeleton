@@ -1,0 +1,71 @@
+{
+    "name": "@darvinstudio/darvin-cms-skeleton",
+    "version": "1.0.0",
+    "repository": {
+        "type": "git",
+        "url": "git@git.darvins.ru:darvin-cms/skeleton.git"
+    },
+    "author": {
+        "name": "Darvin Studio",
+        "email": "info@darvin-studio.ru",
+        "url": "https://www.darvin-studio.ru"
+    },
+    "license": "UNLICENSED",
+    "main": "index.js",
+    "browserslist": [
+        "> 2.5%",
+        "not dead"
+    ],
+    "scripts": {
+        "build": "yarn encore dev --html=false  --img=false  --server=false",
+        "watch": "yarn encore dev --watch --html=false  --img=false  --server=false",
+        "serve": "yarn encore dev --watch --html=true  --img=true  --server=true",
+        "build-html": "yarn encore dev --html=true  --img=false  --server=false",
+        "build-prod": "yarn encore production --html=false  --img=false  --server=false",
+        "images": "yarn encore dev --html=false  --img=prod  --server=false",
+        "lint": "eslint frontend/assets/scripts/",
+        "show-blocks": "node frontend/cli/commands/show-blocks.js",
+        "add-block": "node frontend/cli/commands/add-block.js",
+        "add-empty-block": "node frontend/cli/commands/add-empty-block.js",
+        "favicons": "node  frontend/cli/commands/favicons.js"
+    },
+    "eslint.packageManager": "yarn",
+    "dependencies": {
+        "air-datepicker": "^2.2.3",
+        "animate.css": "^3.5.2",
+        "babel-eslint": "^10.0.3",
+        "bazinga-translator": "^2.6.6",
+        "gulp": "^4.0.2",
+        "jquery": "^3.4.1",
+        "normalize.css": "^7.0.0",
+        "noty": "^3.2.0-beta",
+        "owl.carousel": "^2.2.0",
+        "photoswipe": "^4.1.2",
+        "simplebar": "^3.1.1",
+        "slick-carousel": "^1.8.1"
+    },
+    "devDependencies": {
+        "@symfony/webpack-encore": "^0.28.0",
+        "autoprefixer": "^9.7.1",
+        "browser-sync": "^2.23.6",
+        "browser-sync-webpack-plugin": "^2.2.2",
+        "css-mqpacker": "^6.0.2",
+        "eslint": "^6.8.0",
+        "eslint-plugin-vue": "^6.1.2",
+        "favicons": "^6.2.0",
+        "html-cli": "^1.0.0",
+        "html-webpack-harddisk-plugin": "^0.2.0",
+        "html-webpack-plugin": "^3.2.0",
+        "imagemin-mozjpeg": "^7.0.0",
+        "imagemin-webpack-plugin": "^2.1.1",
+        "node-sass": "^4.13.0",
+        "postcss-loader": "^3.0.0",
+        "postcss-rtl": "^1.5.0",
+        "postcss-scss": "^2.0.0",
+        "raw-loader": "^0.5.1",
+        "sass-loader": "^7.0.1",
+        "sort-css-media-queries": "^1.3.4",
+        "twig-loader": "^0.5.1",
+        "yargs": "^14.2.0"
+    }
+}

@@ -1,0 +1,47 @@
+@import '~styles/variables';
+@import '~styles/mixins';
+.tabs {
+    $switchToMobile: $md;
+
+    &__nav {
+        @media (min-width: $switchToMobile) {
+            display: flex;
+            justify-content: flex-start;
+        }
+
+        &-item {
+            display: block;
+            width: 100%;
+            padding: 10px 20px;
+            border: 1px solid $color-text;
+            cursor: pointer;
+
+            @media (min-width: $switchToMobile) {
+                padding: 5px 20px;
+            }
+
+            &.is-active {
+                background: $color-text;
+                color: $color-text-invert;
+            }
+
+            &:hover {
+                background: rgba($color-text, 0.3);
+            }
+        }
+    }
+
+    &__content {
+        &-item {
+            display: none;
+            width: 100%;
+            padding: 15px 20px 15px;
+            border: 1px solid $color-text;
+
+            &.is-active {
+                display: block;
+                margin-bottom: 15px;
+            }
+        }
+    }
+}

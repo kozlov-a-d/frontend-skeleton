@@ -1,0 +1,47 @@
+{% set certificates = [{
+    title: "Название сертификата",
+    img: "http://via.placeholder.com/180x240/fff/E8ECF1"
+},{
+    title: "Название сертификата",
+    img: "http://via.placeholder.com/180x240/fff/E8ECF1"
+},{
+    title: "Название сертификата",
+    img: "http://via.placeholder.com/180x240/fff/E8ECF1"
+},{
+    title: "Название сертификата",
+    img: "http://via.placeholder.com/180x240/fff/E8ECF1"
+},{
+    title: "Название сертификата",
+    img: "http://via.placeholder.com/180x240/fff/E8ECF1"
+},{
+    title: "Название сертификата",
+    img: "http://via.placeholder.com/180x240/fff/E8ECF1"
+}
+] %}
+
+<!-- begin homepage-certificates -->
+<section class="homepage-certificates js-homepage-certificates">
+    <div class="homepage-certificates__container">
+        <div class="homepage-certificates__header">
+            <h2>{{ title|default('Block "homepage-certificates"') }}</h2>
+            <div class="homepage-certificates__nav nav-arrow">
+                <button class="homepage-certificates__nav-btn nav-arrow__btn -prev js-nav-prev" data-owl-btn-prev>prev</button>
+                <button class="homepage-certificates__nav-btn nav-arrow__btn -next js-nav-next" data-owl-btn-next>next</button>
+            </div>
+        </div>
+
+        <div class="homepage-certificates__list owl-carousel">
+            {% for item in certificates %}
+            <div class="homepage-certificates__item">
+                <div class="homepage-certificates__item-img">
+                    <img src="{{ item.img }}" alt="{{ item.title }}" decoding="async" loading="lazy">
+                </div>
+                <div class="homepage-certificates__item-text">
+                    <p class="homepage-certificates__item-title">{{ item.title }}</p>
+                </div>
+            </div>
+            {% endfor %}
+        </div>
+    </div>
+</section>
+<!-- end homepage-certificates -->

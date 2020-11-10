@@ -1,0 +1,43 @@
+{% set advantages = [{
+    title: "Большой ассортимент",
+    description: "В каталоге сайта вы можете найти более 4000 наименований продукции",
+    img: "http://via.placeholder.com/120x120/E8ECF1/fff"
+},{
+    title: "Опыт работы",
+    description: "Мы работаем более 9 лет на рынке",
+    img: "http://via.placeholder.com/120x120/E8ECF1/fff"
+},{
+    title: "Удобная оплата",
+    description: "Множество способов оплаты: наличными, курьеру, онлайн-оплата",
+    img: "http://via.placeholder.com/120x120/E8ECF1/fff"
+},{
+    title: "Оперативная доставка",
+    description: "Осуществляем своевременную доставку по всей России",
+    img: "http://via.placeholder.com/120x120/E8ECF1/fff"
+},{
+    title: "Скидки и бонусы",
+    description: "Действует программа лояльности для постоянных клиентов",
+    img: "http://via.placeholder.com/120x120/E8ECF1/fff"
+}
+] %}
+
+<!-- begin homepage-advantage -->
+<section class="homepage-advantage js-homepage-advatages">
+    <div class="homepage-advantage__container">
+        <h2>Block "homepage/homepage-advantage"</h2>
+        <div class="homepage-advantage__list owl-carousel">
+            {% for item in advantages %}
+            <div class="homepage-advantage__item">
+                <div class="homepage-advantage__item-img">
+                    <img src="{{ item.img }}" alt="{{ item.title }}" decoding="async" loading="lazy">
+                </div>
+                <div class="homepage-advantage__item-text">
+                    <p class="homepage-advantage__item-title">{{ item.title }}</p>
+                    <p class="homepage-advantage__item-description">{{ item.description }}</p>
+                </div>
+            </div>
+            {% endfor %}
+        </div>
+    </div>
+</section>
+<!-- end homepage-advantage -->

@@ -1,0 +1,56 @@
+<div class="order-cart">
+
+    <button class="order-cart__cart-reset"><span>Cart reset</span></button>
+
+    <div class="order-cart__list">
+
+        <div class="cart-list">
+            <div class="cart-list__head">
+                <div class="cart-list__head-item"></div>
+                <div class="cart-list__head-item">Наименование</div>
+                <div class="cart-list__head-item">Цена</div>
+                <div class="cart-list__head-item">Кол-во</div>
+                <div class="cart-list__head-item">Стоимость</div>
+                <div class="cart-list__head-item"></div>
+            </div>
+            {% for i in 0..3 %}
+            <div class="cart-list__row">
+                <div class="cart-list__row-item -img">
+                    <a href="{{ url.productShow }}">
+                        <!-- Размер превьюшек 70x70 -->
+                        <img src="http://via.placeholder.com/70x70" alt="name" title="name">
+                    </a>
+                </div>
+                <div class="cart-list__row-item -name">
+                    <a href="{{ url.productShow }}">Шляпная коробка с цветами и макарунсами</a>
+                </div>
+                <div class="cart-list__row-item -price">
+                    <div class="cart-list__price">
+                        <span class="cart-list__price-item -old">9 000 руб.</span>
+                        <span class="cart-list__price-item -curr">6 000 руб.</span>
+                    </div>
+                </div>
+                <div class="cart-list__row-item -count">
+                    <input class="js-custom-number" value="1" type="text" pattern="^[ 0-9]+$" data-mod="-no-border">
+                </div>
+                <div class="cart-list__row-item -sum">
+                    <div class="cart-list__price">
+                        <span class="cart-list__price-item -sum">6 000 руб.</span>
+                    </div>
+                </div>
+                <div class="cart-list__row-item -delete">
+                    <button class="cart-list__delete-item"><span>Delete</span></button>
+                </div>
+            </div>
+            {% endfor %}
+        </div>
+        <div class="cart-total">Общая стоимость: <span>8 630 руб.</span></div>
+
+    </div>
+
+    <div class="order-cart__btns-container">
+        <button class="order-cart__btn -continue-shopping"><span>Continue shopping</span></button>
+        <a class="order-cart__btn -checkout" href="{{ url.orderCheckout }}">Checkout</a>
+    </div>
+
+</div>

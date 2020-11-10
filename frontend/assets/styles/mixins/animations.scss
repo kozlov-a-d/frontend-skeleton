@@ -1,0 +1,18 @@
+/* прячем выпадашку */
+@mixin smooth-dropdown-hide($is-custom-transition: false) {
+    opacity: 0;
+    transform: scaleY(0);
+    transform-origin: 0 0;
+    // если нужен простой вариант простой вариант
+    @if $is-custom-transition {
+        @content;
+    } @else {
+        transition: opacity, transform 0.2s linear;
+    }
+}
+
+/* показываем выпадашку (например, по ховеру ) */
+@mixin smooth-dropdown-show() {
+    opacity: 1;
+    transform: scaleY(1);
+}

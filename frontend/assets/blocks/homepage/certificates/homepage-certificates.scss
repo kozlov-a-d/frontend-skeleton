@@ -1,0 +1,57 @@
+@import '~styles/variables';
+@import '~styles/mixins';
+
+.homepage-certificates {
+    @include l-fullwidth;
+    background: rgba(232, 236, 241, 0.5);
+    padding: 50px 0 20px;
+
+    &__container {
+        @include l-container;
+    }
+
+    &__header {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        margin-bottom: 20px;
+
+        h2 {
+            margin: 0;
+        }
+    }
+
+    &__list {
+        padding: 20px 0;
+    }
+
+    &__item {
+        margin-bottom: 1em;
+
+        &-img {
+            display: block;
+            @include l-block-ratio(240/180);
+            margin-bottom: 1em;
+
+            img {
+                @include l-img-full;
+            }
+        }
+
+        &-text {
+            font-size: 0.75em;
+            text-align: center;
+        }
+
+        &-title {
+            font-weight: bold;
+            margin-bottom: 0.3em;
+        }
+    }
+
+    // .owl-dots {
+    //     @include media-min($mobile) {
+    //         display: none;
+    //     }
+    // }
+}

@@ -1,0 +1,61 @@
+{%  set templateItems = [ {
+    img: 'http://via.placeholder.com/480x480',
+    imgFull: 'http://via.placeholder.com/480x480',
+    imgSize: '480x480',
+    title: 'название',
+},{
+    img: 'http://via.placeholder.com/380x480',
+    imgFull: 'http://via.placeholder.com/380x480',
+    imgSize: '380x480',
+    title: 'название очень длинное, в две строчки',
+},{
+    img: 'http://via.placeholder.com/480x380',
+    imgFull: 'http://via.placeholder.com/480x380',
+    imgSize: '480x380',
+    title: 'название',
+},{
+    img: 'http://via.placeholder.com/480x480',
+    imgFull: 'http://via.placeholder.com/480x480',
+    imgSize: '480x480',
+    title: 'название',
+},{
+    img: 'http://via.placeholder.com/380x480',
+    imgFull: 'http://via.placeholder.com/380x480',
+    imgSize: '380x480',
+    title: 'название',
+},{
+    img: 'http://via.placeholder.com/480x480',
+    imgFull: 'http://via.placeholder.com/480x480',
+    imgSize: '480x480',
+    title: 'название',
+}] %}
+
+{# .js-photoswipe-gallery - к этому классу цепляется скрипт для увеличения картинок, отлавливает клики на ссылки  #}
+{# .no-photoswipe - ссылки с этим классом игнорируются photoswipe  #}
+{# data-size - размер увеличенной картинки  #}
+
+<!-- begin .template-masonry -->
+<div class="template-masonry js-template-masonry">
+    <div class="template-masonry__container">
+
+        <div class="template-masonry__header">
+            <h2>Template-masonry</h2>
+            <a class="template-masonry__btn-more" href="">Show All</a>
+        </div>
+
+        <div class="template-masonry__content">
+            <div class="template-masonry__list js-photoswipe-gallery" data-masonry-grid>
+                <div class="template-masonry__sizer"></div>
+                {% for item in templateItems %}
+                <div class="template-masonry__item">
+                    <a href="{{ item.imgFull }}" data-size="{{ item.imgSize }}">
+                        <img src="{{ item.imgFull }}" srcset="{{ item.img }}" decoding="async" loading="lazy" alt="{{ item.title }}">
+                    </a>
+                </div>
+                {% endfor %}
+            </div>
+        </div>
+
+    </div>
+</div>
+<!-- end .template-masonry -->

@@ -1,0 +1,34 @@
+@import '~styles/variables';
+@import '~styles/mixins';
+
+.form-checkout {
+    $col-width: 40px;
+    max-width: 800px;
+    margin: 0 0 50px;
+
+    .form-item {
+        margin-bottom: 15px;
+
+        .form-item {
+            &__label {
+                width: 160px;
+                min-width: 160px;
+            }
+        }
+    }
+
+    .form-btns-container {
+    }
+
+    &__btn {
+        &-submit {
+            @include btn-primary;
+        }
+    }
+
+    // какие то костыли, если надо
+
+    textarea {
+        height: 130px;
+    }
+}

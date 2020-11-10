@@ -1,0 +1,58 @@
+/**
+ * LAYOUT
+ */
+.l-wrapper,
+.l-main,
+.l-header,
+.l-footer {
+    width: 100%;
+    position: relative;
+}
+
+.l-wrapper {
+    flex: 1 0 auto;
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+}
+
+.l-header {
+    z-index: 10;
+}
+
+.l-main {
+    flex: 1 0 auto;
+    z-index: 5;
+    padding: 0;
+}
+
+.l-footer {
+    overflow: hidden;
+}
+
+.l-container {
+    width: auto;
+    max-width: 100%;
+    margin: 0 $content-gap;
+
+    @media (min-width: ( $content-width + $content-gap * 2)) {
+        width: 100%;
+        max-width: $content-width;
+        margin: 0 auto;
+    }
+}
+
+.l-fullwidth {
+    width: 100vw;
+    margin-left: 50%;
+    transform: translate(-50%);
+}
+
+.l-content {
+    display: block;
+    padding: 0 0 60px;
+}
+
+.inner-page .l-main {
+    padding-bottom: 50px;
+}

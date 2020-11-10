@@ -1,0 +1,49 @@
+<!-- класс js-ajax - для отправки ajax'ом -->
+<!-- data-goal-name, data-goal-category - имя и категория цели, при успешной отправке -->
+<form action="/form-success.html" class="js-ajax" data-goal-name="Sign Up" data-goal-category="Profile">
+    <div class="form-sign-up form-layout-item-row">
+
+        <div class="form-item -name">
+            <span class="form-item__label">Name</span>
+            <div class="form-item__field">
+                <input type="text">
+                <div class="form-item__error"></div>
+            </div>
+            <div class="form-item__description">Example: John Adams. Max 75 symbols.</div>
+        </div>
+
+        <div class="form-item -password">
+            <span class="form-item__label">Password</span>
+            <div class="form-item__field">
+                <input type="password">
+                <div class="form-item__error"></div>
+            </div>
+            <div class="form-item__description">Minimum 6 characters</div>
+        </div>
+
+        <div class="form-item -email">
+            <span class="form-item__label">Email</span>
+            <div class="form-item__field">
+                <input type="email">
+                <div class="form-item__error"></div>
+            </div>
+            <div class="form-item__description">Example: name@domain.com</div>
+        </div>
+
+        <div class="form-item -phone">
+            <span class="form-item__label">Phone</span>
+            <div class="form-item__field">
+                <input type="phone">
+                <div class="form-item__error">
+                    <ul><li>Error</li></ul>
+                </div>
+            </div>
+            <div class="form-item__description">Example: +971505556677</div>
+        </div>
+
+        <div class="form-btns-container">
+            <button class="form-sign-up__btn-submit" type="submit">Sign up</button>
+        </div>
+
+    </div>
+</form>

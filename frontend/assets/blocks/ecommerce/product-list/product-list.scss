@@ -1,0 +1,51 @@
+@import '~styles/variables';
+@import '~styles/mixins';
+
+/**
+ * @class .products-list 
+ * @modifier .has-sidebar - меньше элементов в ряд, к примеру в каталоге, где есть фильтр
+*/
+
+.products-list {
+    $gap: 22px;
+
+    @include grid($gap);
+
+    &__item {
+        @include grid-col(1, $gap);
+        margin-bottom: $gap;
+
+        @media (max-width: $sm) {
+            @include grid-col(1/2, $gap);
+        }
+
+        @media (max-width: $md) {
+            @include grid-col(1/3, $gap);
+        }
+
+        @media (max-width: $lg) {
+            @include grid-col(1/4, $gap);
+        }
+    }
+
+    &.has-sidebar {
+        .products-list {
+            &__item {
+                @include grid-col(1/3, $gap);
+                margin-bottom: $gap;
+
+                @media (max-width: $lg) {
+                    @include grid-col(1/3, $gap);
+                }
+
+                @media (max-width: $md) {
+                    @include grid-col(1/2, $gap);
+                }
+
+                @media (max-width: $sm) {
+                    @include grid-col(1, $gap);
+                }
+            }
+        }
+    }
+}

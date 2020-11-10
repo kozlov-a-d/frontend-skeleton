@@ -1,0 +1,39 @@
+<nav class="main-menu js-menu-smart js-menu-mobile">
+    <button data-menu-mobile--switcher-btn><span>menu</span></button>
+    <ul class="main-menu__root is-root">
+        <li><a href="{{ url.textpage }}">О компании</a></li>
+        <li class="-has-dropdown is-active">
+            <a href="{{ url.productsList }}">Каталог</a>
+            <div>
+                <ul>
+                    <li><a href="{{ url.productsList }}">Подкатегория_1</a></li>
+                    <li><a href="{{ url.productsList }}">Подкатегория_2</a></li>
+                    <li><a href="{{ url.productsList }}">Подкатегория с очень длинным название в несколько строк 3</a></li>
+                    <li class="is-active"><a href="{{ url.productsList }}">Подкатегория_4</a></li>
+                    <li><a href="{{ url.productsList }}">Подкатегория_5</a></li>
+                    <li><a href="{{ url.productsList }}">Подкатегория_6</a></li>
+                </ul>
+            </div>
+        </li>
+        <li><a href="{{ url.reviewsList }}">Отзывы</a></li>
+        <li class="-has-dropdown">
+            <a href="{{ url.galleryList }}">Gallery</a>
+            <div>
+                <ul>
+                    <li><a href="{{ url.galleryShow }}">Album #1</a></li>
+                    <li><a href="{{ url.galleryShow }}">Album #2</a></li>
+                    <li><a href="{{ url.galleryShow }}">Album #3</a></li>
+                </ul>
+            </div>
+        </li>
+        <li><a href="{{ url.publicationList }}">Новости</a></li>
+        <li><a href="/contacts.html">Контакты</a></li>
+        <li><a href="{{ url.error404 }}">error 404</a></li>
+        <li><a href="{{ url.faq }}">FAQ</a></li>
+        <li><a href="{{ url.demo }}">Demo</a></li>
+        <li><a href="#">тест 1</a></li>
+        <li><a href="#">тест 2</a></li>
+        <li><a href="#">тест 3</a></li>
+        <li><a href="#">тест 6</a></li>
+    </ul>
+</nav>

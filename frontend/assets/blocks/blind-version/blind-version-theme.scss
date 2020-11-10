@@ -1,0 +1,236 @@
+@import '~styles/variables';
+@import '~styles/mixins';
+
+html,
+body {
+    $font-family-base: Arial, 'Helvetica Neue', Helvetica, sans-serif;
+    $font-family-second: TimesNewRoman, 'Times New Roman', Times, Baskerville, Georgia, serif;
+    $font-bold: 700;
+
+    &.blind {
+        h1,
+        h2,
+        h3,
+        h4,
+        h5,
+        h6,
+        .h1,
+        .h2,
+        .h3,
+        .h4,
+        .h5,
+        .h6 {
+            color: inherit;
+        }
+
+        /* размер шрифта */
+        &-font-size-small {
+            font-size: 14px;
+        }
+        &-font-size-large {
+            font-size: 23px;
+        }
+        &-images-disable {
+            /* стили скрывающие картинки писать тут */
+        }
+        /* размер интервала между буквами */
+        &-spacing-normal {
+            letter-spacing: 0;
+        }
+        &-spacing-md {
+            letter-spacing: 2px;
+        }
+        &-spacing-lg {
+            letter-spacing: 5px;
+        }
+        /* типы шрифтов */
+        &-font-arial {
+            font-family: $font-family-base;
+        }
+        &-font-times {
+            font-family: $font-family-second;
+        }
+
+        &-theme-black {
+            a {
+                color: #ffffff;
+            }
+            hr {
+                background: #ffffff;
+            }
+            body {
+                background: #000000;
+                color: #ffffff;
+            }
+
+            .c-settings {
+                color: #ffffff;
+                .c-settings__nav {
+                    background: rgba(44, 44, 44, 1);
+                    background: linear-gradient(to bottom, rgba(44, 44, 44, 1) 0%, rgba(0, 0, 0, 1) 100%);
+                }
+                .c-settings__nav-label {
+                    text-shadow: none;
+                }
+                .c-settings__font-size {
+                    .c-settings__btn {
+                        &:before {
+                            border-color: #ffffff transparent transparent transparent;
+                        }
+                        &.is-active,
+                        &:hover {
+                            background: #ffffff;
+                            color: #000000;
+                        }
+                    }
+                }
+                .c-settings__theme {
+                    .c-settings__btn {
+                        color: #000000;
+                        border-color: #000000;
+                        &.c-settings__theme-black {
+                            background: #000000;
+                            color: #ffffff;
+                            &:before {
+                            }
+                            &:after {
+                                display: none;
+                            }
+                            &.is-active,
+                            &:hover {
+                                border-color: #ffffff;
+                                &:before {
+                                    border-color: #ffffff transparent transparent transparent;
+                                }
+                                &:after {
+                                    display: block;
+                                    border-color: #000000 transparent transparent transparent;
+                                }
+                            }
+                        }
+                    }
+                }
+                .c-settings__search {
+                    a {
+                        &:before {
+                            // @include sprite($search-white);
+                        }
+                    }
+                }
+                .c-settings__more {
+                    a {
+                        &:before {
+                            // @include sprite($settings-white);
+                        }
+                        &:after {
+                            border-color: #ffffff transparent transparent transparent;
+                        }
+                    }
+                }
+                .c-settings__dropdown {
+                    background: #000000;
+                    color: #ffffff;
+                    border-color: #ffffff;
+                }
+                .c-settings__dropdown-font {
+                    .c-settings__btn {
+                        border-color: #ffffff;
+                        &.is-active {
+                            background: #ffffff;
+                            color: #000000;
+                        }
+                    }
+                }
+                .c-settings__dropdown-footer {
+                    .c-settings__btn {
+                        background: #ffffff;
+                        color: #000000;
+                        span {
+                            border-color: #000000;
+                        }
+                    }
+                }
+            }
+        }
+        &-theme-blue {
+            hr {
+                background: #042b62;
+            }
+            body {
+                background: #9dd1ff;
+                color: #042b62;
+            }
+
+            .c-settings {
+                color: #063462;
+                .c-settings__nav {
+                    background: rgba(137, 189, 231, 1);
+                    background: linear-gradient(to bottom, rgba(137, 189, 231, 1) 0%, rgba(98, 164, 217, 1) 100%);
+                }
+                .c-settings__nav-label {
+                    text-shadow: none;
+                }
+                .c-settings__font-size {
+                    .c-settings__btn {
+                        &:before {
+                            border-color: #0d325e transparent transparent transparent;
+                        }
+                        &.is-active,
+                        &:hover {
+                            background: #0d325e;
+                            color: #79b6e7;
+                        }
+                    }
+                }
+                .c-settings__search {
+                    &:before {
+                        background: #9dd1ff;
+                        border: none;
+                        width: 1px;
+                    }
+                    a {
+                        &:before {
+                            // @include sprite($search-blue);
+                        }
+                    }
+                }
+                .c-settings__more {
+                    &:before {
+                        background: #9dd1ff;
+                        border: none;
+                        width: 1px;
+                    }
+                    a {
+                        &:before {
+                            // @include sprite($settings-blue);
+                        }
+                    }
+                }
+
+                .c-settings__dropdown {
+                    background: #9dd1ff;
+                    color: #042b62;
+                    border-color: #042b62;
+                }
+                .c-settings__dropdown-font {
+                    .c-settings__btn {
+                        border-color: #042b62;
+                        &.is-active {
+                            background: #042b62;
+                            color: #9dd1ff;
+                        }
+                    }
+                }
+                .c-settings__dropdown-footer {
+                    .c-settings__btn {
+                        background: #042b62;
+                        color: #9dd1ff;
+                        span {
+                            border-color: #9dd1ff;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

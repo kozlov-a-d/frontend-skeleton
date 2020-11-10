@@ -1,0 +1,13 @@
+{
+    "compilerOptions": {
+        "baseUrl": ".",
+        "paths": {
+            "~blocks": ["./frontend/assets/blocks/"],
+            "~styles": ["./frontend/assets/styles/"],
+            "~scripts": ["./frontend/assets/scripts/"],
+            "~vendor": ["./frontend/assets/vendor/"]
+        }
+    },
+    "exclude": ["node_modules"],
+    "include": ["frontend/**/*"]
+}

@@ -1,0 +1,170 @@
+body {
+    font-family: $font-primary;
+    font-size: $font-size-base;
+    font-weight: $font-weight-base;
+    line-height: $line-height-base;
+    color: $color-text;
+}
+
+a {
+    color: $color-primary;
+    transition: $transition-default;
+
+    &:hover {
+        text-decoration: none;
+    }
+}
+
+/*====================================================================================================================*/
+/*                                                     HEADING                                                        */
+/*====================================================================================================================*/
+
+h1 {
+    font-family: $font-heading;
+    font-weight: 600;
+    font-size: 32px;
+    line-height: 109%;
+    margin: $text-margin * 2.5 0 $text-margin;
+    color: $color-heading;
+
+    @media (min-width: $mobile) {
+        font-size: 46px;
+        margin: $text-margin * 2.5 0 $text-margin;
+    }
+
+    .home-page & {
+        // some styles
+    }
+}
+
+h2 {
+    font-family: $font-heading;
+    font-weight: 600;
+    font-size: 24px;
+    line-height: 137%;
+    margin: $text-margin * 2 0 $text-margin;
+    color: $color-heading;
+
+    @media (min-width: $mobile) {
+        font-size: 30px;
+        margin: $text-margin * 2 0 $text-margin;
+    }
+
+    .home-page & {
+        text-align: center;
+    }
+}
+
+h3 {
+    font-family: $font-heading;
+    font-weight: 600;
+    font-size: 18px;
+    line-height: 137%;
+    margin: $text-margin * 1.5 0 $text-margin;
+    color: $color-heading;
+
+    @media (min-width: $mobile) {
+        font-size: 22px;
+        margin: $text-margin * 1.5 0 $text-margin;
+    }
+}
+
+h1,
+h2,
+h3 {
+    a {
+        display: inline;
+        color: $color-heading;
+        text-decoration: none;
+        border-bottom: 1px solid $color-heading;
+
+        &:hover {
+            border-bottom: 1px solid transparent;
+        }
+    }
+}
+
+/*====================================================================================================================*/
+/*                                                      TEXT                                                          */
+/*====================================================================================================================*/
+
+p,
+ul,
+ol,
+table,
+pre {
+    margin: 0 0 $text-margin;
+}
+
+.l-main img {
+    max-width: 100%;
+}
+
+.grid {
+    margin-bottom: $text-margin;
+}
+
+ul,
+ol {
+    padding-left: 22px;
+    li {
+        margin: 3px 0;
+    }
+}
+
+.with_marker {
+    list-style: none;
+    li {
+        position: relative;
+        &:before {
+            content: '';
+            display: block;
+            width: 8px;
+            height: 8px;
+            position: absolute;
+            left: -18px;
+            top: 7px;
+            border-radius: 50%;
+            background: #194769;
+        }
+    }
+}
+
+p + ul,
+p + ol {
+    margin-top: -($text-margin - 3px);
+}
+
+.border {
+    border: 2px solid rgba(#3a4750, 0.7);
+    background: rgba(#3a4750, 0.7);
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(#3a4750, 0.5);
+}
+
+@import './tables.scss';
+
+$tables-color-border: $color-text; // цвет границ в обычной табилчке
+$nice-tables-color-border: #e8eaeb; //  цвет границ в табличке
+$nice-tables-color-striped: #e8eaeb; //  дополнительный цвет для строчек таблицы
+$nice-tables-color-hover: darken(#e8eaeb, 10%); //  подсветка строчек/строк табилцы при наведении
+$nice-tables-padding: 15px 18px; //  отступы в ячейках табилцы
+@include table-default($tables-color-border);
+@include table-nice($nice-tables-color-border, $nice-tables-color-striped, $nice-tables-color-hover, $nice-tables-padding) {
+    table-layout: fixed;
+    background: #edeff3;
+    border-bottom: 2px solid #404040;
+    th {
+        background: #404040;
+        color: #fff;
+        font-weight: 400;
+        text-align: left;
+        border: 1px solid #fff;
+        padding: 12px 15px;
+    }
+    td {
+        border: 1px solid #fff;
+        padding: 12px 15px;
+    }
+}
+@include table-responsive();

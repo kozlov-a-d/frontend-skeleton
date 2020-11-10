@@ -1,0 +1,62 @@
+<!-- класс js-ajax - для отправки ajax'ом -->
+<!-- data-goal-name, data-goal-category - имя и категория цели, при успешной отправке -->
+<form action="/form-success.html" class="js-ajax" data-goal-name="Email Review" data-goal-category="Email">
+    <div class="form-add-review form-layout-item-row">
+        <div class="form-add-review__container">
+
+            <div class="form-add-review__col">
+
+                <div class="form-item -name">
+                    <span class="form-item__label">Name</span>
+                    <div class="form-item__field">
+                        <input type="text" placeholder="Name">
+                        <div class="form-item__error"></div>
+                    </div>
+                </div>
+
+                <div class="form-item -email">
+                    <span class="form-item__label">Email</span>
+                    <div class="form-item__field">
+                        <input type="email" placeholder="Email">
+                        <div class="form-item__error"></div>
+                    </div>
+                </div>
+
+                <div class="form-item -phone">
+                    <span class="form-item__label">Phone</span>
+                    <div class="form-item__field">
+                        <input type="phone" placeholder="Phone">
+                        <div class="form-item__error">
+                            <ul><li>Error</li></ul>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+
+            <div class="form-add-review__col">
+
+                <div class="form-item -msg">
+                    <span class="form-item__label">Review</span>
+                    <div class="form-item__field">
+                        <textarea placeholder="Review"></textarea>
+                        <div class="form-item__error"></div>
+                    </div>
+                </div>
+
+            </div>
+
+            <div class="form-add-review__col-fullwidth">
+
+                <div class="form-btns-container">
+                    <div class="form-privacy-police">
+                        Нажимая на кнопку, я даю согласие <br> на <a href="">обработку персональных данных</a>
+                    </div>
+                    <button class="form-add-review__btn-submit" type="submit">Submit</button>
+                </div>
+                
+            </div>
+            
+        </div>
+    </div>
+</form>

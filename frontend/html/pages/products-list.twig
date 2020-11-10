@@ -1,0 +1,71 @@
+{% extends "../layout/_layout.twig" %}
+
+{# Настройки #}
+{% block title %}Products List page | Example.com {% endblock %}
+{% block body_class %}inner-page{% endblock %}
+
+
+{% block main %}
+<div class="l-container">
+
+    <div class="breadcrumbs">
+        <a href="/">Home</a>
+        <span>This page</span>
+    </div>
+
+    <h1>Products List</h1>
+
+    {%  set products = [ {
+            img: 'http://via.placeholder.com/250x250/ffffff/000000',
+            title: 'Плотная рубашка из эластичной джинсовой ткани',
+            price: '5 999'
+        },{
+            img: 'http://via.placeholder.com/250x250/ffffff/000000',
+            title: 'Плотная рубашка из эластичной джинсовой ткани',
+            price: '5 999'
+        },{
+            img: 'http://via.placeholder.com/250x250/ffffff/000000',
+            title: 'Плотная рубашка из эластичной джинсовой ткани',
+            price: '5 999'
+        },{
+            img: 'http://via.placeholder.com/250x250/ffffff/000000',
+            title: 'Плотная рубашка из эластичной джинсовой ткани',
+            price: '5 999'
+        },{
+            img: 'http://via.placeholder.com/250x250/ffffff/000000',
+            title: 'Плотная рубашка из эластичной джинсовой ткани',
+            price: '5 999'
+        },{
+            img: 'http://via.placeholder.com/250x250/ffffff/000000',
+            title: 'Плотная рубашка из эластичной джинсовой ткани',
+            price: '5 999'
+        }] %}
+
+    <div class="l-catalog">
+        <div class="l-catalog__filter">
+            {% include '../../assets/blocks/ecommerce/product-filter-smart/product-filter-smart.twig' %}
+        </div>
+        <div class="l-catalog__list">
+            {% include '../../assets/blocks/ecommerce/product-sorting/product-sorting.twig' %}
+            {% include '../../assets/blocks/ecommerce/product-list/product-list.twig' %}
+            {% include '../../assets/blocks/pagination/pagination.twig' %}
+        </div>
+        <div class="l-catalog__text">
+            <h2>Category SEO text</h2>
+            <p>Eu cum iuvaret debitis voluptatibus, esse perfecto reformidans id has. Eu eam dolores lobortis
+                percipitur, quo te equidem deleniti disputando. Sale liber et vel. Ceteros assentior omittantur cum ad.
+                Vivendum dignissim conceptam pri ut, ei vel partem audiam sapientem.</p>
+            <p>Nec labore cetero theophrastus no, ei vero facer veritus nec. Eu eam dolores lobortis percipitur, quo te
+                equidem deleniti disputando. Oratio accumsan et mea. Eu eam dolores lobortis percipitur, quo te equidem
+                deleniti disputando. An eos iusto solet, id mel dico habemus.</p>
+            <p>. Sea esse deserunt ei, no diam ubique euripidis has. Ius dicat feugiat no, vix cu modo dicat principes.
+                Vel in dicant cetero phaedrum, usu populo interesset cu, eum ea facer nostrum pericula. Vix paulo
+                sanctus scripserit ex, te iriure insolens voluptatum qui.</p>
+            <p>Eu eam dolores lobortis percipitur, quo te equidem deleniti disputando. Sale liber et vel. Sea esse
+                deserunt ei, no diam ubique euripidis has. Tation delenit percipitur at vix. Nisl omittam complectitur
+                pro an, quem omnes munere id vix.</p>
+        </div>
+    </div><!-- end .l-catalog -->
+
+</div>
+{% endblock %}

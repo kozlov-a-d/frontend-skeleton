@@ -1,0 +1,63 @@
+/**
+ * @include media-max($resolution);
+ * @include media-min($resolution);
+ * @include media-interval($resolution-min, $resolution-max);
+ */
+@import '~styles/mixins/media.scss';
+
+/**
+ * @include l-container(?400px);
+ * @include l-fullwidth;
+ * @include l-block-ratio($ratio:1/2);
+ * @include l-block-full($position:absolute);
+ * @include l-img-full($position:absolute, $size:cover);
+ */
+@import '~styles/mixins/layout.scss';
+
+/**
+ * @include grid($grid-gap);
+ * @include grid-col($grid-width, $grid-gap);
+ * @include grid-col-offset($grid-width, $grid-gap);
+ */
+@import '~styles/mixins/grid.scss';
+
+/**
+ * Конструктор кнопок:
+ * @include btn;
+ * @include btn-color($color-default, $color-hover: $color-default)
+ * @include btn-fill($color-default, $color-hover)
+ * @include btn-border($color-default, $color-hover: $color-default)
+ * 
+ * Готовые кнопки:
+ * @include btn-primary;
+ * @include btn-secondary;
+ * @include btn-whatsapp;
+ * 
+ * Позиционирование:
+ * @include btn-center;
+ * @include btn-fullwidth;
+ */
+@import '~styles/mixins/buttons.scss';
+
+/**
+ * @include text-color-invert;
+ */
+@import '~styles/mixins/text.scss';
+
+/**
+ * @mixin smooth-dropdown-hide($is-custom-transition: false);
+ * @mixin smooth-dropdown-show;
+ */
+@import '~styles/mixins/animations.scss';
+
+/**
+ * @mixin css-cross($side, $thick, $bg, $bg-hover)
+ * @mixin bg-linear($heightLine, $heightBorder, $color-main, $color-hover, $color-focus)
+ */
+
+@import '~styles/mixins/geometry.scss';
+
+/**
+ *
+ */
+@import '~styles/mixins/section.scss';

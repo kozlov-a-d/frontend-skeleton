@@ -1,0 +1,20 @@
+@mixin text-color-invert(){
+    color: $color-text-invert;
+
+    a {
+        color: $color-primary-invert;
+    }
+
+    h1, h2, h3 {
+        color: $color-heading-invert;
+
+        a{
+            color: $color-heading-invert;
+            border-bottom: 1px solid $color-heading-invert;
+            
+            &:hover {
+                border-bottom: 1px solid transparent;
+            }
+        }
+    }
+}

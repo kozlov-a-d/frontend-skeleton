@@ -1,0 +1,76 @@
+/**
+ * Создаёт крестик из псевдоэлементов
+ * $side     - ширина и высота квадрата, в который вписывается крестик
+ * $thick    - толщина крестика
+ * $bg       - цвет
+ * $bg-hover - цвет при ховере
+ */
+@mixin css-cross($side, $thick, $bg, $bg-hover) {
+    position: relative;
+    width: $side;
+    height: $side;
+    &:before,
+    &:after {
+        content: '';
+        display: block;
+        width: $side * 1.4;
+        height: $thick;
+        position: absolute;
+        left: 50%;
+        top: 50%;
+        margin-left: $side * -0.7;
+        transform-origin: center center;
+        background: $bg;
+        transition: background $transition-time $transition-ease;
+    }
+    &:before {
+        transform: rotate(45deg);
+    }
+    &:after {
+        transform: rotate(-45deg);
+    }
+    &:hover {
+        &:before,
+        &:after {
+            background: $bg-hover;
+        }
+    }
+}
+
+/**
+ * Добавляет фон с полсками ( например как у textarea рисуют)
+ * $heightLine     - ширина и высота квадрата, в который вписывается крестик
+ * $heightBorder    - толщина крестика
+ * $color-main - цвет
+ * $color-hover - цвет при ховере
+ * $color-focus - цвет при focus
+ */
+@mixin bg-linear($heightLine, $heightBorder, $color-main, $color-hover, $color-focus) {
+    background-image: linear-gradient(
+        180deg,
+        rgba(0, 0, 0, 0) 0%,
+        rgba(0, 0, 0, 0) 100% - ($heightBorder/$heightLine) * 100% - 0.1%,
+        rgba($color-main, 1) 100% - ($heightBorder/$heightLine) * 100%,
+        $color-main 100%
+    );
+    background-size: 100% $heightLine;
+    background-repeat: repeat;
+    &:hover {
+        background-image: linear-gradient(
+            180deg,
+            rgba(0, 0, 0, 0) 0%,
+            rgba(0, 0, 0, 0) 100% - ($heightBorder/$heightLine) * 100% - 0.1%,
+            rgba($color-hover, 1) 100% - ($heightBorder/$heightLine) * 100%,
+            $color-hover 100%
+        );
+    }
+    &:focus {
+        background-image: linear-gradient(
+            180deg,
+            rgba(0, 0, 0, 0) 0%,
+            rgba(0, 0, 0, 0) 100% - ($heightBorder/$heightLine) * 100% - 0.1%,
+            rgba($color-focus, 1) 100% - ($heightBorder/$heightLine) * 100%,
+            $color-focus 100%
+        );
+    }
+}

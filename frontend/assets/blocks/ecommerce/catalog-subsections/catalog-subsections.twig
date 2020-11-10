@@ -1,0 +1,48 @@
+{% set catalogSubsections = [
+    {
+        title: "Пункт каталога 1",
+        img: "http://via.placeholder.com/380x200/E8ECF1/fff"
+    },{
+        title: "Пункт каталога 2",
+        img: "http://via.placeholder.com/380x200/E8ECF1/fff"
+    },{
+        title: "Пункт каталога 3",
+        img: "http://via.placeholder.com/380x200/E8ECF1/fff"
+    },{
+        title: "Пункт каталога 4",
+        img: "http://via.placeholder.com/380x200/E8ECF1/fff"
+    },{
+        title: "Пункт каталога 5",
+        img: "http://via.placeholder.com/380x200/E8ECF1/fff"
+    },{
+        title: "Пункт каталога 6",
+        img: "http://via.placeholder.com/380x200/E8ECF1/fff"
+    },{
+        title: "Пункт каталога 7",
+        img: "http://via.placeholder.com/380x200/E8ECF1/fff"
+    },{
+        title: "Пункт каталога 8",
+        img: "http://via.placeholder.com/380x200/E8ECF1/fff"
+    },{
+        title: "Пункт каталога",
+        img: "http://via.placeholder.com/380x200/E8ECF1/fff"
+    }
+] %}
+
+<!-- begin catalog-subsections -->
+<section class="catalog-subsections">
+    <div class="catalog-subsections__container">
+        <h2>Block "ecommerce/catalog-subsections"</h2>
+        <div class="catalog-subsections__list">
+            {% for item in catalogSubsections %}
+            <div class="catalog-subsections__item">
+                <a href="" class="catalog-subsections__item-img">
+                    <img src="{{ item.img }}" alt="{{ item.title }}" decoding="async" loading="lazy">
+                </a>
+                <a href="" class="catalog-subsections__item-title">{{ item.title }}</a>
+            </div>
+            {% endfor %}
+        </div>
+    </div>
+</section>
+<!-- end catalog-subsections -->

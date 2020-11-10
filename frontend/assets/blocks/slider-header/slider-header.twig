@@ -1,0 +1,48 @@
+{%  set slides = [ {
+    img: 'http://via.placeholder.com/1920x550',
+    name: 'Luxury Yacht Charter at Bulgari Resort',
+    description: 'Experience unparalleled luxury onboard Sunseeker and Benetti Yachts from the exclusive Bulgari Resort and Residences',
+    url: '#'
+},{
+    img: 'http://via.placeholder.com/1920x550',
+    name: 'Luxury Yacht Charter at Bulgari Resort 2',
+    description: ''
+},{
+    img: 'http://via.placeholder.com/1920x550',
+    name: '',
+    description: ''
+}] %}
+<!-- begin slider -->
+<div class="slider-header js-slider-header">
+    <div class="slider-header__mobile">
+        <img src="/assets/images/placeholder/818x600.jpg"
+             srcset="/assets/images/placeholder/414x300.webp 414w,
+                     /assets/images/placeholder/414x300.jpg 414w, 
+                     /assets/images/placeholder/818x600.webp 818w" 
+             alt="text">
+    </div>
+    <div class="slider-header__desktop">
+        <div class="slider-header__slider js-slider">
+            {% for item in slides %}
+            <div class="item slider-header__item">
+                {% if item.url %}<a href="{{ item.url }}">{% endif %}
+                <!-- Размер слайдов 1920x550 -->
+                <img class="slider-header__img" src="{{ item.img }}" loading="lazy" alt="{{ item.name }}" title="{{ item.name }}">
+                {% if item.url %}</a>{% endif %}
+                <div class="slider-header__text-container">
+                    {% if item.name %}<p class="-title">{{ item.name }}</p>{% endif %}
+                    {% if item.description %}<p>{{ item.description }}</p>{% endif %}
+                    {% if item.url %}<a class="slider-header__item-btn" href="{{ item.url }}">More</a>{% endif %}
+                </div>
+            </div>
+        {% endfor %}
+        </div>
+         <div class="slider-header__nav">
+            <button class="slider-header__nav-btn -prev js-nav-prev" data-owl-btn-prev>prev</button>
+            <button class="slider-header__nav-btn -next js-nav-next" data-owl-btn-next>next</button>
+
+            <div class="slider-header__nav-counter js-nav-counter"></div>
+        </div>
+    </div>
+</div>
+<!-- end slider -->

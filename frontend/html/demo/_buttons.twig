@@ -1,0 +1,42 @@
+<style>
+    .col-bordered {
+        padding: 10px;
+        border: 1px solid rgba(30, 31, 38, 0.5);
+        border-radius: 4px;
+    }
+    .col-title p{
+        margin: 0;
+        font-size: 18px;
+        font-weight: 600;
+        line-height: 40px;
+    }
+</style>
+  
+<h2>Button</h2>
+<div class="grid">
+
+    <div class="col-1-1 col-bordered col-title">
+        <p>fill</p>
+        <button class="btn-primary"><span>Default</span></button>
+        <button class="btn-secondary"><span>Secondary</span></button>
+
+        <p>fill + Loading</p>
+        <button class="btn-primary -loading"><span>Default</span></button>
+        <button class="btn-secondary -loading"><span>Secondary</span></button>
+
+        <p>fill + Disabled</p>
+        <button disabled class="btn-primary"><span>Default</span></button>
+        <button disabled class="btn-secondary"><span>Secondary</span></button>
+    </div>
+
+    <div class="col-1-1 col-bordered col-title">
+        <p>Position Fullwidth</p>
+        <button class="btn-primary btn-hover--primary btn--fullwidth"><span>Fullwidth</span></button>
+    </div>
+    
+    <div class="col-1-1 col-bordered col-title">
+        <p>Position Center</p>
+        <button class="btn-primary btn-hover--primary btn--center"><span>Center</span></button>
+    </div>
+
+</div>

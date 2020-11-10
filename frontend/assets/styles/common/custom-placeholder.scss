@@ -1,0 +1,25 @@
+.custom-placeholder {
+    position: relative;
+
+    input {
+        font-size: 15px;
+        padding-top: 18px;
+    }
+
+    span {
+        position: absolute;
+        left: 20px;
+        top: 19px;
+        font-size: 15px;
+        pointer-events: none;
+        transition: $transition-default;
+        color: #A3A3A3;
+    }
+
+    &.-focus {
+        span {
+            top: 5px;
+            font-size: 13px;
+        }
+    }
+}

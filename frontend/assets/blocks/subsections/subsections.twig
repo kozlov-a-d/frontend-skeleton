@@ -1,0 +1,29 @@
+{%  set subsections = [ {
+    img: 'http://via.placeholder.com/270x216/c0c0c0/ffffff',
+    title: 'Подкатегория #1',
+},{
+    img: 'http://via.placeholder.com/270x216/c0c0c0/ffffff',
+    title: 'Подкатегория с длинным названием #2',
+},{
+    img: 'http://via.placeholder.com/270x216/c0c0c0/ffffff',
+    title: 'Подкатегория #3',
+},{
+    img: 'http://via.placeholder.com/270x216/c0c0c0/ffffff',
+    title: 'Подкатегория #4',
+},{
+    img: 'http://via.placeholder.com/270x216/c0c0c0/ffffff',
+    title: 'Подкатегория #5',
+},{
+    img: 'http://via.placeholder.com/270x216/c0c0c0/ffffff',
+    title: 'Подкатегория #6',
+}] %}
+<!-- begin subsections -->
+<div class="subsections">
+    {% for item in subsections %}
+        <div class="subsections__item">
+            <a class="subsections__img" href="text.html"><img src="{{ item.img }}" alt="{{ item.title }}" title="{{ item.title }}"></a>
+            <a class="subsections__text" href="text.html">{{ item.title }}</a>
+        </div>
+    {% endfor %}
+</div>
+<!-- end subsections -->

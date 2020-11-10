@@ -1,0 +1,36 @@
+@import '~styles/variables';
+@import '~styles/mixins';
+
+.form-send-enquiry {
+    $col-width: 40px;
+
+    &__container {
+        @include grid($col-width);
+    }
+
+    &__col {
+        @include grid-col(1/2, $col-width);
+
+        @media (max-width: $md) {
+            @include grid-col(1, $col-width);
+        }
+
+        &-fullwidth {
+            @include grid-col(1, $col-width);
+        }
+    }
+
+    .form-item {
+    }
+
+    .form-btns-container {
+    }
+
+    &__btn {
+        &-submit {
+            @include btn-primary;
+        }
+    }
+
+    /* какие то костыли, если надо */
+}

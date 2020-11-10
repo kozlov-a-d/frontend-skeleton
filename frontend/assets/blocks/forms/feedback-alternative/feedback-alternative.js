@@ -1,0 +1,1 @@
+import './feedback-alternative.scss';

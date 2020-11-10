@@ -1,0 +1,56 @@
+{%  set templateItems = [ {
+    img: 'http://via.placeholder.com/384x192',
+    title: 'название',
+},{
+    img: 'http://via.placeholder.com/384x192',
+    title: 'название очень длинное, в две строчки',
+},{
+    img: 'http://via.placeholder.com/384x192',
+    title: 'название',
+},{
+    img: 'http://via.placeholder.com/384x192',
+    title: 'название',
+},{
+    img: 'http://via.placeholder.com/384x192',
+    title: 'название',
+},{
+    img: 'http://via.placeholder.com/384x192',
+    title: 'название',
+},{
+    img: 'http://via.placeholder.com/384x192',
+    title: 'название',
+},{
+    img: 'http://via.placeholder.com/384x192',
+    title: 'название',
+}] %}
+
+<!-- begin .template-list -->
+<div class="template-list">
+    <div class="template-list__container">
+
+        <div class="template-list__header">
+            <h2>Template-list</h2>
+            <a class="template-list__btn-more" href="">Show All</a>
+        </div>
+
+        <div class="template-list__content">
+            <div class="template-list__list">
+                {% for item in templateItems %}
+                <div class="template-list__item">
+                    <a class="template-list__item-img" href="">
+                        <!-- Размер превьюшек 384x192 -->
+                        <img src="{{ item.img }}" decoding="async" loading="lazy" alt="{{ item.title }}">
+                    </a>
+                    <a class="template-list__item-title" href="">{{ item.title }}</a>
+                </div>
+                {% endfor %}
+            </div>
+        </div>
+
+        <div class="template-list__footer">
+            <a class="template-list__btn-more" href="">Show All</a>
+        </div>
+
+    </div>
+</div>
+<!-- end .template-list -->

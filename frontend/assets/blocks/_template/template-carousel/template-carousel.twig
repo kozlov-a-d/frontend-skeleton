@@ -1,0 +1,55 @@
+{%  set templateItems = [ {
+    img: 'http://via.placeholder.com/120x120',
+    title: 'название',
+},{
+    img: 'http://via.placeholder.com/120x120',
+    title: 'название очень длинное, в две строчки',
+},{
+    img: 'http://via.placeholder.com/120x120',
+    title: 'название',
+},{
+    img: 'http://via.placeholder.com/120x120',
+    title: 'название',
+},{
+    img: 'http://via.placeholder.com/120x120',
+    title: 'название',
+},{
+    img: 'http://via.placeholder.com/120x120',
+    title: 'название',
+},{
+    img: 'http://via.placeholder.com/120x120',
+    title: 'название',
+},{
+    img: 'http://via.placeholder.com/120x120',
+    title: 'название',
+}] %}
+
+<!-- begin .template-carousel -->
+<div class="template-carousel js-template-carousel">
+    <div class="template-carousel__container">
+
+        <div class="template-carousel__header">
+            <h2>Temaplate-carousel</h2>
+            <div class="template-carousel__nav nav-arrow">
+                <button class="template-carousel__nav-btn nav-arrow__btn -prev js-nav-prev" data-owl-btn-prev>prev</button>
+                <button class="template-carousel__nav-btn nav-arrow__btn -next js-nav-next" data-owl-btn-next>next</button>
+            </div>
+        </div>
+
+        <div class="template-carousel__content">
+            <div class="template-carousel__list owl-carousel">
+                {% for item in templateItems %}
+                <div class="template-carousel__item">
+                    <a class="template-carousel__item-img" href="">
+                        <!-- Размер превьюшек 120x120 -->
+                        <img src="{{ item.img }}" decoding="async" loading="lazy" alt="{{ item.title }}">
+                    </a>
+                    <a class="template-carousel__item-title" href="">{{ item.title }}</a>
+                </div>
+                {% endfor %}
+            </div>
+        </div>
+
+    </div>
+</div>
+<!-- end .template-carousel -->

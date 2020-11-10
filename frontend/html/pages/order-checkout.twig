@@ -1,0 +1,29 @@
+{% extends "../layout/_layout.twig" %}
+
+{# Настройки #}
+{% block title %}Checkout | Example.com {% endblock %}
+{% block body_class %}inner-page{% endblock %}
+
+
+{% block main %}
+    <div class="l-container">
+
+        <div class="breadcrumbs">
+            <a href="/">Home</a>
+            <a href="/">Cart</a>
+            <span>Checkout</span>
+        </div>
+
+        <h1>Checkout</h1>
+
+        <div class="order-checkout js-order-checkout">
+            <div class="order-checkout__form js-order-checkout-form-wrapper">
+                {% include '../../assets/blocks/forms/checkout/checkout.twig' %}
+            </div>
+            <div class="order-checkout__cart-widget js-order-checkout-cart-widget">
+                {% include '../../assets/blocks/header/cart-widget/cart-widget.twig' %} 
+            </div>
+        </div>
+    
+    </div>
+{% endblock %}

@@ -1,0 +1,1 @@
+import './publication-list.scss';

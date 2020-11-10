@@ -1,0 +1,68 @@
+{%  set options = [
+    'Название',
+    'Цена',
+    'Опция 1',
+    'Опция 2',
+    'Опция 3',
+    'Опция 4',
+    'Опция 5'
+] %}
+
+{%  set products = [ {
+    img: 'http://via.placeholder.com/250x250/ffffff/000000',
+    title: 'Плотная рубашка из эластичной джинсовой ткани',
+    price: '5 999',
+    options: [ 'val1', 'val2', 'val3', 'val4', 'val5' ]
+},{
+    img: 'http://via.placeholder.com/250x250/ffffff/000000',
+    title: 'Плотная рубашка из эластичной джинсовой ткани',
+    price: '5 999',
+    options: [ 'val1', 'val2', 'val3', 'val4', 'val5' ]
+},{
+    img: 'http://via.placeholder.com/250x250/ffffff/000000',
+    title: 'Плотная рубашка из эластичной джинсовой ткани',
+    price: '5 999',
+    options: [ 'val1', 'val2', 'val3', 'val4', 'val5' ]
+},{
+    img: 'http://via.placeholder.com/250x250/ffffff/000000',
+    title: 'Плотная рубашка из эластичной джинсовой ткани',
+    price: '5 999',
+    options: [ 'val1', 'val2', 'val3', 'val4', 'val5' ]
+},{
+    img: 'http://via.placeholder.com/250x250/ffffff/000000',
+    title: 'Плотная рубашка из эластичной джинсовой ткани',
+    price: '5 999',
+    options: [ 'val1', 'val2', 'val3', 'val4', 'val5' ]
+},{
+    img: 'http://via.placeholder.com/250x250/ffffff/000000',
+    title: 'Плотная рубашка из эластичной джинсовой ткани',
+    price: '5 999',
+    options: [ 'val1', 'val2', 'val3', 'val4', 'val5' ]
+}] %}
+
+<div class="product-compare js-compare">
+    <div class="product-compare__sidebar js-compare-sidebar">
+        <div class="product-compare__head">{{ item }} </div>
+        {% for item in options %}
+            <div class="product-compare__row">{{ item }} </div>
+        {% endfor %}
+    </div>
+    <div class="product-compare__content">
+        <div class="product-compare__content-view js-compare-content">
+            {% for item in products %}
+            <div class="product-compare__item js-compare-item">
+                <div class="product-compare__head">
+                    <a href="/products-show.html"><img src="{{ item.img }}" alt="{{ item.title }}" title="{{ item.title }}"></a>
+                    <button class="product-compare__btn-to-cart">В корзину</button>
+                    <button class="product-compare__btn-remove">Удалить</button>
+                </div>
+                <div class="product-compare__row">{{ item.title }} </div>
+                <div class="product-compare__row">{{ item.price }} </div>
+                {% for val in item.options %}
+                <div class="product-compare__row">{{ val }} </div>
+                {% endfor %}
+            </div>
+            {% endfor %}
+        </div>
+    </div>
+</div>

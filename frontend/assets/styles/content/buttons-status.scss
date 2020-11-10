@@ -1,0 +1,40 @@
+.btn {
+    &-danger {
+        @include btn;
+        @include btn-fill($color-danger, $color-danger-dark);
+        @include btn-color(#fff);
+
+        &-border {
+            @include btn;
+            @include btn-fill(#fff, $color-danger-dark);
+            @include btn-border($color-danger, $color-danger-dark);
+            @include btn-color($color-danger, #fff);
+        }
+    }
+
+    &-warn {
+        @include btn;
+        @include btn-fill($color-warn, $color-warn-dark);
+        @include btn-color(#fff);
+
+        &-border {
+            @include btn;
+            @include btn-fill(#fff, $color-warn-dark);
+            @include btn-border($color-warn, $color-warn-dark);
+            @include btn-color($color-warn, #fff);
+        }
+    }
+
+    &-success {
+        @include btn;
+        @include btn-fill($color-success, $color-success-dark);
+        @include btn-color(#fff);
+
+        &-border {
+            @include btn;
+            @include btn-fill(#fff, $color-success-dark);
+            @include btn-border($color-success, $color-success-dark);
+            @include btn-color($color-success, #fff);
+        }
+    }
+}

@@ -1,0 +1,53 @@
+.tabs{
+    $switchToMobile: $md;
+
+    &__nav{
+        display: flex;
+        justify-content: flex-start;
+
+        @media (max-width: $switchToMobile) {
+            flex-wrap: wrap;
+        }
+
+        &-item{
+            display: block;
+            padding: 5px 20px;
+            margin-right: 10px;
+            margin-top: 5px;
+            margin-bottom: 5px;
+            border: 1px solid #706d74;
+            cursor: pointer;
+            
+            @media (max-width: $switchToMobile) {
+                width: 100%;
+                padding: 10px 20px;
+                margin-right: 0;
+            }
+
+            &.is-active {
+                background: #706d74;
+                color: #fff;
+            }
+
+            &:hover{
+                background: rgba(#706d74, 0.3);
+            }
+        }
+    }
+
+    &__content{
+        
+        &-item{
+            display: none;
+            width: 100%;
+            padding: 15px 20px 15px;
+            border: 1px solid #706d74;
+            
+
+            &.is-active {
+                display: block;
+                margin-bottom: 15px;
+            }
+        }
+    }
+}

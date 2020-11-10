@@ -1,0 +1,48 @@
+@import '~styles/variables';
+@import '~styles/mixins';
+
+.product-widget-carousel {
+    $gap: 30px;
+
+    padding: 30px 0;
+    // background: rgb(236, 236, 236);
+
+    &__container {
+    }
+
+    &__header {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        margin-bottom: 20px;
+
+        h2 {
+            margin: 0;
+        }
+    }
+
+    &__content {
+    }
+
+    &__list {
+    }
+
+    &__item {
+    }
+
+    // &__footer {
+    //     display: flex;
+    //     align-items: center;
+    //     justify-content: center;
+    // }
+
+    // &__btn {
+
+    //     &-more{
+    //         @include btn-primary;
+    //     }
+    // }
+}
+
+.product-show-recommend {
+}

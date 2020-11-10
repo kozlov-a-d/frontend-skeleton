@@ -1,0 +1,40 @@
+{# <a class="js-btn-blind-version" href="">Версия</a> #}
+
+{# <a class="call-link -telegram" href="tg://resolve?domain=USERNAME">Telegram</a> #}
+
+<header class="l-header header">
+    <div class="header__container">
+
+        <a class="header__logo" href="/">
+            <img src="/assets/images/logo.png" alt="Logo">
+        </a>
+
+        <div class="header__widgets">
+            <div class="header__widgets-item header-search">
+                <a class="header-search__link" href="">Поиск</a>
+            </div>
+            <div class="header__widgets-item header-profile-widget">
+                <a class="header-profile-widget__link" href="">Личный кабинет</a>
+            </div>
+            <div class="header__widgets-item header-favorites-widget">
+                <a class="header-favorites-widget__count" href="">Избранное<span>5</span></a>
+            </div>
+            <div class="header__widgets-item header-cart-widget js-cart-widget">
+                <a class="header-cart-widget__counter" href="{{ url.orderCart }}">Корзина<span>12</span></a>
+                <div class="header-cart-widget__dropdown">
+                    {% include './cart-widget/cart-widget.twig' %} 
+                </div>
+            </div>
+        </div>
+
+        <a class="call-link -whatsapp" href="https://api.whatsapp.com/send?phone=NUMBER" target="_blank">WhatsApp</a>
+    </div>
+    {# .js-menu-smart - к этому классу цепляется скрипт, скрывающий пункты, которым нехватило места  #}
+    {# .js-menu-mobile - к этому классу цепляется скрипт, генерирующий меню для адаптива  #}
+    {# [data-menu-mobile--switcher-btn] - кнопка для открытия меню на адаптиве  #}
+    {# li.is-active - текущий пункт меню  #}
+    {# li.-has-dropdown - пункт меню с потомками  #}
+    <div class="header__main-menu">
+        {% include './main-menu/main-menu.twig' %} 
+    </div>
+</header>

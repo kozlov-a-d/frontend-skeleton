@@ -1,0 +1,41 @@
+@import '~styles/variables';
+@import '~styles/mixins';
+
+.homepage-advantage {
+    &__container {
+    }
+
+    &__list {
+        padding: 20px 0;
+    }
+
+    &__item {
+        margin-bottom: 1em;
+
+        &-img {
+            display: block;
+            margin-bottom: 1em;
+
+            img {
+                display: block;
+                width: 120px !important;
+                height: 120px !important;
+                border-radius: 50%;
+                margin: 0 auto;
+            }
+        }
+
+        &-text {
+            font-size: 0.75em;
+            text-align: center;
+        }
+
+        &-title {
+            font-weight: bold;
+            margin-bottom: 0.3em;
+        }
+
+        &-description {
+        }
+    }
+}

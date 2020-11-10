@@ -1,0 +1,30 @@
+{%  set reviews = [ {
+    author: 'Fiona Jameson',
+    date: '26.02.18',
+    text: 'Set sail with some friends over the weekend and I couldn’t have imagined a better birthday! Danced the whole weekend away and felt like a king thanks to the awesome service from the crew. They were there for everything we needed the whole time. My friends and I all agree that the cocktails were the best we’ve ever tasted and that the food made the whole trip even better.'
+},{
+    author: 'Robert Smithers',
+    date: '26.02.18',
+    text: 'I’ve never been on a yacht before, but my family decided that it would be a special way for us to go on our yearly holiday. I loved every minute of it! The crew treated us all so well and it was so relaxing being able to forget about all of my troubles and lay on the sundeck. The kids love it too! They got taught how to jet-ski with their dad and I’ve never seen them so excited! Now we have to deal with them wanting one for Christmas. The food was great too. Would love to do it again!'
+},{
+    author: 'Fiona Jameson',
+    date: '26.02.18',
+    text: 'Set sail with some friends over the weekend and I couldn’t have imagined a better birthday! Danced the whole weekend away and felt like a king thanks to the awesome service from the crew. They were there for everything we needed the whole time. My friends and I all agree that the cocktails were the best we’ve ever tasted and that the food made the whole trip even better.'
+},{
+    author: 'Robert Smithers',
+    date: '26.02.18',
+    text: 'I’ve never been on a yacht before, but my family decided that it would be a special way for us to go on our yearly holiday. I loved every minute of it! The crew treated us all so well and it was so relaxing being able to forget about all of my troubles and lay on the sundeck. The kids love it too! They got taught how to jet-ski with their dad and I’ve never seen them so excited! Now we have to deal with them wanting one for Christmas. The food was great too. Would love to do it again!'
+}] %}
+<div class="reviews-list">
+    {% for item in reviews %}
+    <div class="reviews-list__item">
+        <p class="reviews-list__item-header">
+            <span class="reviews-list__item-name">{{ item.author}}</span>
+            <span class="reviews-list__item-date">{{ item.date}}</span>
+        </p>
+        <div class="reviews-list__item-text">
+            <p>{{ item.text}}</p>
+        </div>
+    </div>
+    {% endfor %}
+</div>

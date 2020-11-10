@@ -1,0 +1,74 @@
+{%  set galleryItems = [ {
+    img: 'http://via.placeholder.com/318x200',
+    original: 'http://via.placeholder.com/1318x700',
+    size: '1318x700',
+    title: 'название',
+},{
+    img: 'http://via.placeholder.com/318x200',
+    original: 'http://via.placeholder.com/1318x700',
+    size: '1318x700',
+    title: 'название',
+},{
+    img: 'http://via.placeholder.com/318x200',
+    original: 'http://via.placeholder.com/1318x700',
+    size: '1318x700',
+    title: 'название',
+},{
+    img: 'http://via.placeholder.com/318x200',
+    original: 'http://via.placeholder.com/1318x700',
+    size: '1318x700',
+    title: 'название',
+},{
+    img: 'http://via.placeholder.com/318x200',
+    original: 'http://via.placeholder.com/1318x700',
+    size: '1318x700',
+    title: 'название',
+},{
+    img: 'http://via.placeholder.com/318x200',
+    original: 'http://via.placeholder.com/1318x700',
+    size: '1318x700',
+    title: 'название',
+},{
+    img: 'http://via.placeholder.com/318x200',
+    original: 'http://via.placeholder.com/1318x700',
+    size: '1318x700',
+    title: 'название',
+},{
+    img: 'http://via.placeholder.com/318x200',
+    original: 'http://via.placeholder.com/1318x700',
+    size: '1318x700',
+    title: 'название',
+},{
+    img: 'http://via.placeholder.com/318x200',
+    original: 'http://via.placeholder.com/1318x700',
+    size: '1318x700',
+    title: 'название',
+}] %}
+<!-- begin .gallery-widget-carousel -->
+<div class="gallery-widget-carousel js-gallery-widget-carousel">
+    <div class="gallery-widget-carousel__container">
+
+        <div class="gallery-widget-carousel__header">
+            <h2>Gallery-widget-carousel</h2>
+            <div class="gallery-widget-carousel__nav nav-arrow">
+                <button class="gallery-widget-carousel__nav-btn nav-arrow__btn -prev js-nav-prev" data-owl-btn-prev>prev</button>
+                <button class="gallery-widget-carousel__nav-btn nav-arrow__btn -next js-nav-next" data-owl-btn-next>next</button>
+            </div>
+        </div>
+
+        <div class="gallery-widget-carousel__content">
+            <div class="gallery-widget-carousel__list owl-carousel js-photoswipe-gallery">
+                {% for item in galleryItems %}
+                <div class="gallery-widget-carousel__item">
+                    <a class="gallery-widget-carousel__item-img" href="{{ item.original }}" data-size="{{ item.size }}">
+                        <!-- Размер превьюшек 318x200 -->
+                        <img src="{{ item.img }}" decoding="async" loading="lazy" alt="{{ item.title }}" title="{{ item.title }}">
+                    </a>
+                </div>
+                {% endfor %}
+            </div>
+        </div>
+
+    </div>
+</div>
+<!-- end .gallery-widget-carousel -->

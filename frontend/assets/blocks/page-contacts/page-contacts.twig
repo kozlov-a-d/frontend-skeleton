@@ -1,0 +1,58 @@
+<div class="contacts-page">
+    <div class="contacts-page__info">
+        <div class="contacts-page__details contacts-details">
+
+            <div class="contacts-details__item -phone">
+                <span class="contacts-details__item-name">Phone</span> 
+                <a href="tel:+971503396554">+971 50 339 6554</a> 
+                <a href="tel:+97150FDX6554">+971 50 FDX 6554</a>
+            </div>
+
+            <div class="contacts-details__item -email">
+                <span class="contacts-details__item-name">Email</span>
+                <a href="mailto:info@fdxonline.com">info@fdxonline.com</a>
+            </div>
+
+            <div class="contacts-details__item -location">
+                Furniture &amg; Decor Exchange FZ  LLE    
+                <span>P.O.Box 37293</span>,
+                <span>Ras Al Khaimah United Arab Emirates</span>
+            </div>
+            
+        </div>
+        {# <div class="contacts-page__map">
+            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d55853.8286405757!2d55.95584658223342!3d25.765463319025514!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3ef6742801b9e2eb%3A0x1bc32b5a3b289c2d!2sRAK+Mall!5e0!3m2!1sru!2sru!4v1543948817773" style="border:0" allowfullscreen></iframe>
+        </div> #}
+        <div class="contacts-page__map">
+            <div class="map js-map-yandex"
+            data-center="56.138102,40.384599"
+            data-coord="56.138102,40.384599;56.135801,40.388698"
+            data-label="Darvin;test2"
+            data-desciption=";test2 desc"
+            data-zoom="15"></div>
+        </div>
+    </div>
+    <div class="contacts-page__form contacts-form">
+
+        <p class="-title">Get in Touch</p>
+        
+        {% include '../forms/feedback-alternative/feedback-alternative.twig' %}
+
+    </div>
+</div>
+
+<script type="application/ld+json">
+    {
+      "@context": "http://schema.org/",
+      "@type": "Organization",
+      "name": "Имя компании",
+      "address": {
+        "@type": "PostalAddress",
+        "streetAddress": "600022",
+        "addressLocality": "Vladimir",
+        "addressRegion": "Владимирская область",
+        "postalCode": "600022"
+      },
+      "telephone": ["+7999999999", "+71232323"]
+    }
+</script>

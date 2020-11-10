@@ -1,0 +1,50 @@
+{% extends "../layout/_layout.twig" %}
+
+{# Настройки #} 
+{% block title %}My Profile page | Example.com {% endblock %}
+{% block body_class %}inner-page{% endblock %}
+
+
+{% block main %}
+    <div class="l-container">
+
+        <div class="breadcrumbs">
+            <a href="/">Home</a>
+            <span>My Profile</span>
+        </div>
+        
+        <h1>My Profile</h1>
+
+        <div class="my-profile">
+           <div class="my-profile__sidebar">
+                {% include '../../assets/blocks/user/my-profile-sidebar/my-profile-sidebar.twig' %} 
+           </div>
+           <div class="my-profile__main">
+
+                <div class="my-profile-short-info">
+                    <a href="" class="my-profile-short-info__item">
+                        <strong>AED 0</strong>Total Purshases
+                    </a>
+                    <a href="" class="my-profile-short-info__item">
+                        <strong>AED 0</strong>Total Credits
+                    </a>
+                    <a href="" class="my-profile-short-info__item">
+                        <strong>0</strong>Total Orders
+                    </a>
+                    <a href="" class="my-profile-short-info__item">
+                        <strong>0</strong>Unread Messages
+                    </a>
+                </div>
+
+                <h3>My Last 5 Orders</h3>
+
+                <div class="my-profile-empty-list">You do not have any record in this section.</div>
+
+           </div>
+        </div>
+
+        
+
+    </div>
+{% endblock %}
+

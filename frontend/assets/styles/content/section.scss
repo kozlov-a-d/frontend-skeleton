@@ -1,0 +1,47 @@
+.section {
+    &__container {
+        @include l-container;
+        padding: 3em 0;
+        padding: 2em 0;
+    }
+
+    &__header {
+        padding: 1em 0;
+        padding: 0.5em 0;
+    }
+
+    &__heading {
+        margin: 0;
+        text-align: center;
+    }
+
+    // &__annotation{
+    //     width: 100%;
+    //     max-width: $md;
+    //     margin: 0;
+    //     font-size: 1em;
+    // }
+
+    // &__heading + &__annotation{
+    //     margin-top: 0.5em;
+    // }
+
+    &__content {
+        padding: 1em 0;
+        padding: 0.5em 0;
+
+        & > *:first-child {
+            margin-top: 0;
+        }
+
+        & > *:last-child {
+            margin-bottom: 0;
+        }
+    }
+
+    &__footer {
+        padding: 1em 0;
+        padding: 0.5em 0;
+        text-align: center;
+    }
+}

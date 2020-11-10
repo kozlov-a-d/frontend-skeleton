@@ -1,0 +1,72 @@
+@import '~styles/variables';
+@import '~styles/mixins';
+
+.product-compare {
+    $borderColor: #ecedee;
+
+    position: relative;
+
+    &__sidebar {
+        position: absolute;
+        left: 0;
+        top: 0;
+        width: 220px;
+        border: 1px solid $borderColor;
+        border-left: 0;
+        border-bottom: 0;
+    }
+
+    &__content {
+        max-width: 100%;
+        overflow: hidden;
+        padding: 0 0 30px 220px;
+        font-size: 0;
+        white-space: nowrap;
+        border-left: 1px solid $borderColor;
+    }
+
+    &__item {
+        display: inline-block;
+        width: 237px;
+        border: 1px solid $borderColor;
+        border-left: 0;
+        border-bottom: 0;
+    }
+
+    &__head {
+        height: 210px;
+        border-bottom: 1px solid $borderColor;
+        padding: 7px 15px;
+        font-size: 15px;
+        white-space: normal;
+
+        img {
+            max-width: 100px;
+        }
+    }
+
+    &__row {
+        border-bottom: 1px solid $borderColor;
+        padding: 7px 15px;
+        font-size: 15px;
+        white-space: normal;
+
+        img {
+            max-width: 100px;
+        }
+    }
+
+    &__btn-to-cart {
+        @include btn-primary;
+    }
+
+    &__btn-remove {
+        @include btn-secondary;
+    }
+
+    .simplebar-track.simplebar-horizontal {
+        left: 0;
+        height: 11px;
+        margin-bottom: -25px;
+    }
+}

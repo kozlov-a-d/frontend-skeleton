@@ -1,0 +1,208 @@
+/* rtl:begin:ignore */
+
+
+/*********************** owl-carousel ***********************/
+
+[dir=rtl] .owl-carousel.owl-rtl {
+    direction: rtl !important;
+}
+
+[dir=rtl] .owl-carousel .owl-item {
+    float: right !important;
+}
+
+/*********************** Links  ***********************/
+
+[dir=rtl] a[href^="mailto"],
+[dir=rtl] a[href^="tel"],
+[dir=rtl] a[href^="whatsapp"] {
+    direction: ltr;
+    display: inline-block;
+}
+
+[dir=rtl] .contacts-inner a[href^="mailto"],
+[dir=rtl] .contacts-inner a[href^="tel"],
+[dir=rtl] .contacts-inner a[href^="whatsapp"] {
+    text-align: right;
+}
+
+
+/*********************** datepickers ***********************/
+
+[dir=rtl] .datepickers-container {
+    left: 0;
+    right: auto;
+    direction: ltr;
+}
+
+[dir=rtl] .datepicker {
+    left: -100000px;
+    right: auto;
+}
+
+
+/*********************** PhotoSwipe ***********************/
+
+.pswp{
+    direction: ltr;
+    left: 0;
+    top: 0;
+
+
+    &__bg {
+        left: 0;
+        top: 0;
+        transform: translateZ(0);
+    }
+
+    &__scroll-wrap {
+        left: 0;
+        top: 0;
+    }
+
+    &__zoom-wrap {
+        -webkit-transform-origin: left top;
+        -ms-transform-origin: left top;
+        transform-origin: left top;
+        transition: transform 333ms cubic-bezier(0.4, 0, 0.22, 1);
+    }
+
+    &__bg {
+        transition: opacity 333ms cubic-bezier(0.4, 0, 0.22, 1);
+    }
+
+    &--animated-in &__bg,
+    &--animated-in &__zoom-wrap {
+        transition: none;
+    }
+
+    &__item {
+        left: 0;
+        right: 0;
+        top: 0;
+        bottom: 0;
+    }
+
+    &__img {
+        position: absolute;
+        width: auto;
+        height: auto;
+        top: 0;
+        left: 0;
+    }
+
+    &--ie &__img {
+        width: 100% !important;
+        height: auto !important;
+        left: 0;
+        top: 0;
+    }
+
+    &__error-msg {
+        left: 0;
+        top: 50%;
+        margin-top: -8px;
+    }
+
+    &__button {
+        float: right;
+    }
+
+    &__button,
+    &__button--arrow--left:before,
+    &__button--arrow--right:before {
+        background-size: 264px 88px;
+    }
+
+    &__button--close {
+        background-position: 0 -44px;
+    }
+
+    &__button--share {
+        background-position: -44px -44px;
+    }
+
+    &--fs &__button--fs {
+        background-position: -44px 0;
+    }
+
+    &__button--zoom {
+        background-position: -88px 0;
+    }
+
+    &--zoomed-in &__button--zoom {
+        background-position: -132px 0;
+    }
+
+    &__button--arrow--left,
+    &__button--arrow--right {
+        top: 50%;
+        margin-top: -50px;
+    }
+
+    &__button--arrow--left {
+        left: 0;
+    }
+
+    &__button--arrow--right {
+        right: 0;
+        left: auto;
+    }
+
+    &__button--arrow--left:before {
+        left: 6px;
+        background-position: -138px -44px;
+    }
+
+    &__button--arrow--right:before {
+        right: 6px;
+        background-position: -94px -44px;
+    }
+
+    &__share-modal {
+        top: 0;
+        left: 0;
+    }
+
+    &__share-tooltip {
+        right: 44px;
+    }
+
+    &__share-modal--fade-in &__share-tooltip {
+        transform: translateY(0);
+    }
+
+    &__counter {
+        left: 0;
+        top: 0;
+    }
+
+    &__caption {
+        left: 0;
+        bottom: 0;
+    }
+
+    &__preloader {
+        top: 0;
+        left: 50%;
+        margin-left: -22px;
+        direction: ltr;
+    }
+
+    &--css_animation &__preloader__icn {
+        left: 15px;
+        top: 15px;
+    }
+
+    &--css_animation &__preloader__donut {
+        top: 0;
+        left: 0;
+    }
+
+    &__top-bar {
+        left: 0;
+        top: 0;
+    }
+}
+
+/* rtl:end:ignore */

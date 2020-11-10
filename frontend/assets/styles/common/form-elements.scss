@@ -1,0 +1,149 @@
+.form-element-common {
+    border: 1px solid rgba(#1e1f26, 0.4);
+    border-radius: 4px;
+    font: inherit;
+    font-size: 15px;
+    color: #2f434d;
+    background: #fff;
+    transition: $transition-default;
+    appearance: none;
+
+    &:focus {
+        box-shadow: 0 0 4px 0 rgba(119, 171, 196, 0.4);
+        border-color: #4d648d;
+    }
+
+    &:invalid{
+        box-shadow: none;
+    }
+
+    &::placeholder {
+        color: #4d648d;
+        opacity: 1;
+    }
+}
+
+// для инпутов, селектов, текстарий
+.form-element-property {
+    @extend .form-element-common;
+    display: block;
+    width: 100%;
+    padding-left: 15px;
+    padding-right: 15px;
+}
+
+// для чекбоксов и радиобатонов
+.form-element-small {
+    display: inline-block;
+    width: 16px;
+    height: 16px;
+    vertical-align: middle;
+    margin-right: 10px;
+}
+
+
+/********************************************************************************************************/
+/*                                           FORM ELEMENTS                                              */
+/********************************************************************************************************/
+
+input[type="text"],
+input[type="phone"],
+input[type="tel"],
+input[type="email"],
+input[type="password"],
+input[type="number"]{
+    @extend .form-element-property;
+    height: 45px;
+    &:disabled {
+        color: #c6cfd4;
+    }
+}
+
+textarea {
+    @extend .form-element-property;
+    height: 214px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    resize: none;
+}
+
+select {
+    @extend .form-element-property;
+    height: 45px;
+}
+
+.custom-checkbox{
+    
+    input{
+        display: none;
+    }
+
+    span{
+        transition: $transition-default;
+        cursor: pointer;
+
+        &:before{
+            content: '';
+            @extend .form-element-common;
+            @extend .form-element-small;
+            position: relative;
+            top: -2px;
+        }
+
+        &:hover{
+            color: $color-warn;
+        }
+    }
+
+    input:checked + span{
+        color: $color-warn;
+
+        &:before{
+            background: #000;
+        }
+    }
+}
+
+.custom-radio{
+    
+    input{
+        display: none;
+    }
+
+    span{
+        transition: $transition-default;
+        cursor: pointer;
+
+        &:before{
+            content: '';
+            @extend .form-element-common;
+            @extend .form-element-small;
+            border-radius: 50%;
+            position: relative;
+            top: -2px;
+        }
+
+        &:hover{
+            color: $color-warn;
+        }
+    }
+
+    input:checked + span{
+        color: $color-warn;
+
+        &:before{
+            background: #000;
+        }
+    }
+}
+
+
+.only-timepicker .datepicker--nav,
+.only-timepicker .datepicker--content {
+    display: none;
+}
+.only-timepicker .datepicker--time {
+    border-top: none;
+}
+
+

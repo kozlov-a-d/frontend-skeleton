@@ -1,0 +1,61 @@
+@import '~styles/variables';
+@import '~styles/mixins';
+
+.template-masonry {
+    $gap: 20px;
+
+    padding: 80px 0 50px;
+    // background: rgb(236, 236, 236);
+
+    &__container {
+    }
+
+    &__header {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        margin-bottom: 20px;
+
+        h2 {
+            margin: 0;
+        }
+    }
+
+    &__content {
+    }
+
+    &__list {
+        margin: 30px $gap/-2;
+    }
+
+    // Use element sizing for responsive layouts with percentage width
+    &__sizer,
+    &__item {
+        width: 100%;
+        padding: 0 $gap/2 $gap;
+
+        @media (min-width: $sm) {
+            width: 50%;
+        }
+
+        @media (min-width: $desktop) {
+            width: 33.33%;
+        }
+
+        a {
+            display: block;
+            text-decoration: none;
+        }
+
+        img {
+            display: block;
+            width: 100%;
+        }
+    }
+
+    &__btn {
+        &-more {
+            @include btn-primary;
+        }
+    }
+}

@@ -1,0 +1,41 @@
+{%  set defaultProducts = [ {
+    img: 'http://via.placeholder.com/384x320/f9f9f9/000000',
+    title: 'Плотная рубашка из эластичной джинсовой ткани',
+    price: { curr: '5 999', full: '6 000'}
+},{
+    img: 'http://via.placeholder.com/384x320/f9f9f9/000000',
+    title: 'Плотная рубашка',
+    price: '5 999'
+},{
+    img: 'http://via.placeholder.com/384x320/f9f9f9/000000',
+    title: 'Плотная рубашка',
+    price: { curr: '5 999', full: '6 000'}
+},{
+    img: 'http://via.placeholder.com/384x320/f9f9f9/000000',
+    title: 'Плотная рубашка',
+    price: { curr: '5 999', full: '6 000'}
+}] %}
+
+<!-- begin .product-widget-carousel -->
+<div class="product-widget-carousel {{ class }} js-product-widget-carousel">
+    <div class="product-widget-carousel__container">
+
+        <div class="product-widget-carousel__header">
+            <h2>{{ title|default('Product widget carousel') }}</h2>
+            <div class="product-widget-carousel__nav nav-arrow">
+                <button class="product-widget-carousel__nav-btn nav-arrow__btn -prev js-nav-prev" data-owl-btn-prev>prev</button>
+                <button class="product-widget-carousel__nav-btn nav-arrow__btn -next js-nav-next" data-owl-btn-next>next</button>
+            </div>
+        </div>
+
+        <div class="product-widget-carousel__content">
+            <div class="product-widget-carousel__list owl-carousel">
+                {% for item in products|default(defaultProducts) %}
+                {% include '../product-list-item/product-list-item.twig' with {'item': item, 'class': '', 'mod': ''} %}
+                {% endfor %}
+            </div>
+        </div>
+
+    </div>
+</div>
+<!-- end .product-widget-carousel -->

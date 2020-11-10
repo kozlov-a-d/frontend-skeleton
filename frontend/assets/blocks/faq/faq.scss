@@ -1,0 +1,53 @@
+@import '~styles/variables';
+@import '~styles/mixins';
+
+.faq {
+    &__item {
+        margin-bottom: 20px;
+        width: 100% !important;
+
+        &.is-open {
+        }
+
+        &-title {
+            cursor: pointer;
+            box-shadow: 0px 4px 50px rgba(28, 60, 142, 0.1);
+            border-radius: 10px;
+            padding: 20px 20px 20px 58px;
+            background: url(../images/icons/spoiler-closed.svg) 19px center no-repeat;
+            background-size: 20px;
+
+            .is-open & {
+                background-color: $color-primary;
+                background-image: url(../images/icons/spoiler-opened.svg);
+
+                p {
+                    color: #fff;
+                }
+            }
+
+            p {
+                font-weight: 400;
+                font-size: 16px;
+                line-height: 22px;
+                color: $color-primary;
+                margin: 0;
+            }
+        }
+
+        &-content {
+            height: 0;
+            overflow: hidden;
+            width: 100% !important;
+            transition: $transition-default;
+
+            .is-open & {
+                margin-bottom: 30px;
+            }
+
+            &-wrap {
+                padding: 20px 0 1px;
+            }
+        }
+    }
+}

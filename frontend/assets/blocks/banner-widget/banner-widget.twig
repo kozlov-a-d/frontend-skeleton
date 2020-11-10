@@ -1,0 +1,37 @@
+{%  set banners = [ {
+    title: 'Заголовок баннера',
+    img: 'http://via.placeholder.com/375x190'
+},{
+    title: 'Заголовок баннера',
+    img: 'http://via.placeholder.com/375x190'
+},{
+    title: 'Заголовок баннера',
+    img: 'http://via.placeholder.com/375x190'
+},{
+    title: 'Заголовок баннера',
+    img: 'http://via.placeholder.com/375x190'
+},] %}
+<!-- begin banner-widget -->
+<div class="banner-widget js-banner-widget">
+    <div class="banner-widget__container">
+
+        <div class="banner-widget__header">
+            <h2>Banner-widget</h2>
+        </div>
+
+        <div class="banner-widget__content">
+            <div class="banner-widget__list owl-carousel">
+                {% for item in banners %}
+                <div class="banner-widget__item">
+                    <a href="" class="banner-widget__item-img">
+                        <!-- Размер превьюшек 375x190 -->
+                        <img src="{{ item.img }}" decoding="async" loading="lazy" alt="{{ item.title }}" title="{{ item.title }}">
+                    </a>
+                    <a class="banner-widget__item-title" href="">{{ item.title }}</a>
+                </div>
+                {% endfor %}
+            </div>
+        </div>
+
+    </div>
+</div><!-- end banner-widget -->

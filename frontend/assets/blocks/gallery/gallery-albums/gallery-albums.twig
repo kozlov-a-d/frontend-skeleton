@@ -1,0 +1,31 @@
+{%  set galleryAlbums = [ {
+    img: 'http://via.placeholder.com/376x262',
+    title: 'Album name 1',
+},{
+    img: 'http://via.placeholder.com/376x262',
+    title: 'Album with looooooong title in two lines',
+},{
+    img: 'http://via.placeholder.com/376x262',
+    title: 'Album name 3',
+},{
+    img: 'http://via.placeholder.com/376x262',
+    title: 'Album name 4',
+},{
+    img: 'http://via.placeholder.com/376x262',
+    title: 'Album name 2',
+},{
+    img: 'http://via.placeholder.com/376x262',
+    title: 'Album name 3',
+}] %}
+
+<div class="gallery-albums">
+    {% for item in galleryAlbums %}
+        <div class="gallery-albums__item">
+            <a class="gallery-albums__item-img" href="gallery-show.html">
+                <!-- Размер превьюшек 376x262 -->
+                <img src="{{ item.img }}" alt="{{ item.title }}" title="{{ item.title }}"></a>
+            </a>
+            <a class="gallery-albums__item-title" href="gallery-show.html">{{ item.title }}</a>
+        </div>
+    {% endfor %}
+</div>

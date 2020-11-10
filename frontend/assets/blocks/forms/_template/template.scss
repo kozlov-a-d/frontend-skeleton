@@ -1,0 +1,62 @@
+@import '~styles/variables';
+@import '~styles/mixins';
+/* Файл со стилями конкретных форм */
+
+.form-template {
+    $col-width: 40px;
+
+    /* Create grid (optional) */
+    &__container {
+        @include grid($col-width);
+    }
+
+    &__col {
+        @include grid-col(1/2, $col-width);
+
+        @media (max-width: $md) {
+            @include grid-col(1, $col-width);
+        }
+
+        &-fullwidth {
+            @include grid-col(1, $col-width);
+        }
+    }
+
+    .form-item {
+        /* Options for .form-item */
+        @extend .form-item--row;
+        /* @extend .form-item--column; */
+
+        /* если надо костыльнуть что-то из частей итема */
+        .form-item {
+            &__label {
+            }
+
+            &__field {
+            }
+
+            &__input {
+            }
+
+            &__error {
+            }
+
+            &__description {
+            }
+        }
+    }
+
+    .form-btns-container {
+        /* Options for .form-btns-container */
+        /* @extend .form-btns-container--align-left; */
+        /* @extend .form-btns-container--align-right; */
+    }
+
+    &__btn {
+        &-submit {
+            @include btn-primary;
+        }
+    }
+
+    /* какие то костыли, если надо */
+}

@@ -1,0 +1,70 @@
+{% extends "../layout/_layout.twig" %}
+
+{# Настройки #}
+{% block title %}Home page | Example.com {% endblock %}
+{% block body_class %}home-page{% endblock %}
+
+
+{% block main %}
+
+{% include '../../assets/blocks/slider-header/slider-header.twig' %}
+
+    <div class="l-container">
+
+        <br>
+
+        {# {% include '../../assets/blocks/_template/template-list/template-list.twig' %} #}
+
+        {# {% include '../../assets/blocks/_template/template-parallax-scroll/template-parallax-scroll.twig' %} #}
+
+        {# {% include '../../assets/blocks/_template/template-masonry/template-masonry.twig' %}   #}
+
+        {% include '../../assets/blocks/homepage/homepage-text-main/homepage-text-main.twig' %}
+
+        {% include '../../assets/blocks/ecommerce/catalog-subsections/catalog-subsections.twig' %}
+
+        {# {% include '../../assets/blocks/_template/template-parallax-mouse/template-parallax-mouse.twig' %} #}
+
+        {% include '../../assets/blocks/gallery/gallery-widget-grid/gallery-widget-grid.twig' %}
+
+        {% include '../../assets/blocks/gallery/gallery-widget-carousel/gallery-widget-carousel.twig' %}
+
+        {% include '../../assets/blocks/ecommerce/product-widget-carousel/product-widget-carousel.twig' %} 
+
+        {% include '../../assets/blocks/homepage/homepage-advantage/homepage-advantage.twig' %}
+
+        {% include '../../assets/blocks/homepage/certificates/homepage-certificates.twig' %}
+
+        {% include '../../assets/blocks/homepage/homepage-text-additional/homepage-text-additional.twig' %}
+
+        {# {% include '../../assets/blocks/_template/template-carousel/template-carousel.twig' %} #}
+
+        {% include '../../assets/blocks/reviews/reviews-widget/reviews-widget.twig' %}
+
+        {% include '../../assets/blocks/banner-widget/banner-widget.twig' %}
+
+        {% include '../../assets/blocks/instagram-widget/instagram-widget.twig' %}
+
+        {% include '../../assets/blocks/forms/feedback-footer/feedback-footer.twig' %}
+
+{# 
+        <div class="map">
+            <div class="map__content js-map-yandex"
+            data-center="56.138102,40.384599"
+            data-coord="56.138102,40.384599;56.135801,40.388698"
+            data-label="Darvin;test2"
+            data-desciption=";test2 desc"
+            data-zoom="15"></div>
+        </div> #}
+
+    </div>
+{% endblock %}
+
+{% block styles %}
+    <link rel="stylesheet" href="assets/build-dev/homepage.css">
+{% endblock %}
+
+{% block scripts %}
+    {#<script src="https://api-maps.yandex.ru/2.1/?lang=ru_RU" ></script>#}
+    <script src="assets/build-dev/homepage.js"></script>
+{% endblock %}

@@ -1,0 +1,67 @@
+{%  set galleryItems = [ {
+    img: 'http://via.placeholder.com/480x480',
+    original: 'http://via.placeholder.com/1318x700',
+    size: '1318x700',
+    title: 'название',
+},{
+    img: 'http://via.placeholder.com/480x480',
+    original: 'http://via.placeholder.com/1318x700',
+    size: '1318x700',
+    title: 'название',
+},{
+    img: 'http://via.placeholder.com/480x480',
+    original: 'http://via.placeholder.com/1318x700',
+    size: '1318x700',
+    title: 'название',
+},{
+    img: 'http://via.placeholder.com/480x480',
+    original: 'http://via.placeholder.com/1318x700',
+    size: '1318x700',
+    title: 'название',
+},{
+    img: 'http://via.placeholder.com/480x480',
+    original: 'http://via.placeholder.com/1318x700',
+    size: '1318x700',
+    title: 'название',
+},{
+    img: 'http://via.placeholder.com/480x480',
+    original: 'http://via.placeholder.com/1318x700',
+    size: '1318x700',
+    title: 'название',
+},{
+    img: 'http://via.placeholder.com/480x480',
+    original: 'http://via.placeholder.com/1318x700',
+    size: '1318x700',
+    title: 'название',
+},{
+    img: 'http://via.placeholder.com/480x480',
+    original: 'http://via.placeholder.com/1318x700',
+    size: '1318x700',
+    title: 'название',
+}] %}
+
+<!-- begin .gallery-widget-grid -->
+<div class="gallery-widget-grid">
+    <div class="gallery-widget-grid__container">
+
+        <div class="gallery-widget-grid__header">
+            <h2>Gallery-widget-grid</h2>
+            <a class="gallery-widget-grid__btn-more" href="">Show All</a>
+        </div>
+
+        <div class="gallery-widget-grid__content">
+            <div class="gallery-widget-grid__list js-photoswipe-gallery">
+                {% for item in galleryItems %}
+                <div class="gallery-widget-grid__item">
+                    <a class="gallery-widget-grid__item-img" href="{{ item.original }}" data-size="{{ item.size }}">
+                        <!-- Размер превьюшек 480x480 -->
+                        <img src="{{ item.img }}" decoding="async" loading="lazy" alt="{{ item.title }}" title="{{ item.title }}">
+                    </a>
+                </div>
+                {% endfor %}
+            </div>
+        </div>
+
+    </div>
+</div>
+<!-- end .gallery-widget-grid -->

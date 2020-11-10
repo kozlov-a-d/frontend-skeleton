@@ -1,0 +1,257 @@
+/**
+ * form item
+ * 
+ * Usage:
+ * .form-layout-item-row
+ * .form-layout-item-column
+ */
+.form-layout-item {
+    &-row {
+        .form-item {
+            display: block;
+            margin: 0 0 9px;
+
+            &__label {
+                display: block;
+                padding: 5px 0;
+            }
+
+            &__field {
+                display: block;
+            }
+
+            &__input {
+                display: block;
+            }
+
+            &__error {
+                display: block;
+                color: $color-danger;
+                font-size: 13px;
+
+                ul {
+                    list-style: none;
+                    padding: 0;
+                }
+
+                li {
+                }
+            }
+        }
+    }
+
+    &-column {
+        .form-item {
+            display: flex;
+            align-items: flex-start;
+            margin: 0 0 15px;
+
+            &__label {
+                display: block;
+                padding: 13px 15px 13px 0;
+                width: 140px;
+                min-width: 140px;
+            }
+
+            &__field {
+                display: block;
+                min-width: 300px;
+            }
+
+            &__input {
+                display: block;
+            }
+
+            &__error {
+                display: block;
+                color: $color-danger;
+                font-size: 13px;
+
+                ul {
+                    list-style: none;
+                    padding: 0;
+                }
+
+                li {
+                }
+            }
+
+            &__description {
+                padding: 13px 0 13px 15px;
+                color: #a7a7a7;
+            }
+        }
+    }
+}
+
+/**
+ * Customize .form-item by type
+ */
+.form-item {
+    &.-name {
+        input {
+            background: #fff url(~images/icons/form-item--name.svg) 15px center no-repeat;
+            background-size: 20px auto;
+            padding-left: 50px;
+        }
+    }
+
+    &.-email {
+        input {
+            background: #fff url(~images/icons/form-item--email.svg) 15px center no-repeat;
+            background-size: 20px auto;
+            padding-left: 50px;
+        }
+    }
+
+    &.-phone {
+        input {
+            background: #fff url(~images/icons/form-item--phone.svg) 15px center no-repeat;
+            background-size: 20px auto;
+            padding-left: 50px;
+        }
+    }
+
+    &.-location {
+        input,
+        textarea {
+            background: #fff url(~images/icons/form-item--location.svg) 15px 10px no-repeat;
+            background-size: 20px auto;
+            padding-left: 50px;
+        }
+    }
+
+    &.-password {
+        input {
+            background: #fff url(~images/icons/form-item--password.svg) 15px center no-repeat;
+            background-size: 20px auto;
+            padding-left: 50px;
+        }
+    }
+
+    &.-msg {
+        textarea {
+            background: #fff url(~images/icons/form-item--msg.svg) 15px 10px no-repeat;
+            background-size: 20px auto;
+            padding-left: 50px;
+        }
+    }
+
+    &.-checkbox {
+        .form__item-field {
+            display: flex;
+            align-items: center;
+        }
+    }
+
+    &.-date {
+        input {
+            background: #fff url(~images/icons/form-item--date.svg) 15px center no-repeat;
+            background-size: 20px auto;
+            padding-left: 50px;
+        }
+    }
+
+    &.-time {
+        input {
+            background: #fff url(~images/icons/form-item--time.svg) 15px center no-repeat;
+            background-size: 20px auto;
+            padding-left: 50px;
+        }
+    }
+}
+
+/**
+ * form btns container
+ * 
+ * .form-btns-container--align-center; - optional
+ * .form-btns-container--align-left; - optional
+ * .form-btns-container--align-right; - optional
+ */
+.form-btns-container {
+    display: flex;
+    justify-content: space-between;
+
+    &--align-center {
+        justify-content: center;
+    }
+
+    &--align-right {
+        justify-content: flex-end;
+    }
+
+    &--align-left {
+        justify-content: flex-start;
+    }
+}
+
+/**
+ * form privacy police
+ */
+.form-privacy-police {
+}
+
+/**
+ * form success
+ */
+.form-success {
+    padding: 20px 0 5px;
+    text-align: center;
+
+    &__icon {
+        display: block;
+        width: 50px;
+        height: 50px;
+        margin: 0 auto 25px;
+    }
+
+    &__title {
+        font-size: 20px;
+        font-weight: 500;
+    }
+
+    &__msg {
+    }
+}
+
+.form-heading {
+    font-size: 30px;
+    font-weight: 400;
+    line-height: 40px;
+    text-align: center;
+    margin-bottom: 25px;
+
+    &.-left {
+        text-align: left;
+    }
+}
+
+.form-fragment {
+    /* hidden default for checkout page */
+    &.-recipient {
+        max-height: 0;
+        overflow: hidden;
+        opacity: 0;
+        transition: $transition-default;
+        &.is-show {
+            max-height: 1500px;
+            opacity: 1;
+        }
+    }
+
+    /* hidden default for checkout page */
+    &.-delivery {
+        display: none;
+        &.is-show {
+            display: block;
+        }
+    }
+
+    /* hidden default for checkout page */
+    &.-pickUpAtStore {
+        display: none;
+        &.is-show {
+            display: block;
+        }
+    }
+}

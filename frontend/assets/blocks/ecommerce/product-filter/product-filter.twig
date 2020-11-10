@@ -1,0 +1,41 @@
+<div class="products-filter">
+
+    <div class="products-filter__block">
+        <div class="products-filter__block-name">Price</div>
+        <div class="products-filter__block-content">
+            <div class="products-filter__price js-price-range">
+                <input class="products-filter__price--min" value="1576" min="0" type="number">
+                <input class="products-filter__price--max" value="87634" max="99999" type="number">
+                <div class="products-filter__price-slider"></div>
+            </div>
+            <button class="products-filter__block-btn-clear">Clear All</button>
+        </div>
+    </div>
+
+    <div class="products-filter__block">
+        <div class="products-filter__block-name">Checkbox</div>
+        <div class="products-filter__block-content">
+            <div class="products-filter__checkbox-list">
+                {% for i in 1..6 %}
+                <label class="custom-checkbox"><input type="checkbox"><span>Checkbox_{{i}}</span></label>
+                {% endfor %}
+            </div>
+            <button class="products-filter__block-btn-clear">Clear All</button>
+        </div>
+    </div>
+
+    <div class="products-filter__block">
+        <div class="products-filter__block-name">Radio</div>
+        <div class="products-filter__block-content">
+            <div class="products-filter__radio-list">
+                {% for i in 1..6 %}
+                <label class="custom-radio"><input type="radio" name="radio-group"><span>Radio_1</span></label>
+                {% endfor %}
+            </div>
+            <button class="products-filter__block-btn-clear">Clear All</button>
+        </div>
+    </div>
+
+    <button class="products-filter__btn-apply">Apply</button>
+
+</div><!-- end .products-filter -->

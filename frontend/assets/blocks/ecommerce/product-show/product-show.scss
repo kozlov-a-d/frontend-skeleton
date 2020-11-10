@@ -1,0 +1,218 @@
+@import '~styles/variables';
+@import '~styles/mixins';
+
+$image-main--width: 480px;
+$image-main--height: 480px;
+
+$image-thumb--width: 70px;
+$image-thumb--height: 70px;
+
+/**
+ * Main card layout
+ */
+.product-show {
+    &__main-line {
+        display: flex;
+        justify-content: space-between;
+
+        @media (max-width: $mobile) {
+            flex-wrap: wrap;
+        }
+    }
+
+    &__images {
+        width: $image-main--width;
+        min-width: $image-main--width;
+        margin-bottom: 20px;
+
+        @media (max-width: $mobile) {
+            width: 100%;
+            min-width: 100%;
+        }
+    }
+    &__details {
+        width: auto;
+        flex-grow: 1;
+        margin-left: 20px;
+        margin-bottom: 20px;
+        padding: 20px 40px;
+        background: #f5f6f7;
+
+        @media (max-width: $mobile) {
+            padding: 10px 20px 15px;
+            width: 100%;
+            margin-left: 0;
+            margin-top: 20px;
+        }
+    }
+}
+
+/**
+ * Main card images
+ */
+.product-images-main {
+    position: relative;
+    width: 100%;
+    padding: 0 0 $image-main--height;
+    margin-bottom: 10px;
+
+    @media (max-width: $sm) {
+        padding: 0 0 $image-main--height/2;
+    }
+
+    &__container {
+        @include l-block-full;
+        overflow: hidden;
+    }
+    &__item {
+        height: $image-main--height;
+        @media (max-width: $sm) {
+            height: $image-main--height/2;
+        }
+        img {
+            @include l-img-full;
+        }
+    }
+
+    .owl-nav {
+        position: absolute;
+        left: 0;
+        top: 0;
+        width: 100%;
+        height: 100%;
+        z-index: 2;
+        pointer-events: none;
+
+        @media (max-width: $xs) {
+            display: none;
+        }
+
+        button {
+            position: absolute;
+            top: 50%;
+            pointer-events: auto;
+            cursor: pointer;
+            &.owl-prev {
+                left: 20px;
+            }
+            &.owl-next {
+                right: 20px;
+            }
+            &.disabled {
+                opacity: 0.5;
+                cursor: default;
+            }
+            span {
+                display: none;
+            }
+        }
+    }
+}
+
+/**
+ * Thumbs card images
+ */
+.product-images-thumb {
+    position: relative;
+    width: 100%;
+
+    &__container {
+        overflow: hidden;
+
+        &:not(.is-initialized) {
+            display: none;
+        }
+    }
+
+    &__item {
+        display: block !important;
+        max-height: 70px;
+        max-width: 70px;
+        width: 100%;
+        margin: 0 auto;
+        cursor: pointer;
+    }
+
+    .current .product-images-thumb__item {
+        position: relative;
+        &:before {
+            content: '';
+            display: block;
+            width: 100%;
+            height: 100%;
+            position: absolute;
+            left: 0;
+            top: 0;
+            box-sizing: border-box;
+            border: 3px solid #fff;
+        }
+        &:after {
+            content: '';
+            display: block;
+            width: 100%;
+            height: 100%;
+            position: absolute;
+            left: 0;
+            top: 0;
+            box-sizing: border-box;
+            border: 1px solid #3990ab;
+        }
+    }
+}
+
+/**
+ * Buy form
+ */
+.product-buy {
+    &__price {
+        span {
+            &.-current {
+                font-size: 38px;
+                font-weight: 600;
+                margin-right: 10px;
+            }
+            &.-old {
+                font-size: 28px;
+                font-weight: 600;
+                text-decoration: line-through;
+            }
+        }
+    }
+
+    &__count {
+        margin-top: 20px;
+
+        .custom-number {
+            /* см. styles/common/form__custom-number.scss */
+        }
+    }
+
+    &__btns-container {
+        margin-top: 20px;
+    }
+
+    &__btn {
+        @include btn-primary;
+
+        &.-quick {
+            margin-right: 20px;
+        }
+        &.-add-to-cart {
+        }
+    }
+}
+
+/**
+ * Short description on right side
+ */
+.product-short-description {
+    margin-top: 20px;
+    padding-top: 20px;
+    border-top: 1px solid #b1b1b1;
+
+    p {
+        &.-tit {
+            font-size: 22px;
+        }
+    }
+}

@@ -1,0 +1,54 @@
+@import '~styles/variables';
+@import '~styles/mixins';
+
+.subsections {
+    $gap-horizontal: 32px;
+    $gap-vertical: 32px;
+    $img-width: 270px;
+    $img-height: 216px;
+
+    padding: 10px 0;
+    @include grid($gap-horizontal);
+
+    &__item {
+        @include grid-col(1/4, $gap-horizontal);
+        margin-bottom: $gap-vertical;
+        position: relative;
+        transition: $transition-default;
+
+        @media (max-width: $lg) {
+            @include grid-col(1/3, $gap-horizontal);
+        }
+        @media (max-width: $md) {
+            @include grid-col(1/2, $gap-horizontal);
+        }
+        @media (max-width: $sm) {
+            @include grid-col(1, $gap-horizontal);
+        }
+
+        &:hover {
+            opacity: 0.7;
+        }
+    }
+    &__img {
+        display: block;
+        position: relative;
+        @include l-block-ratio($img-height/$img-width);
+        margin-bottom: 5px;
+        img {
+            @include l-img-full();
+        }
+    }
+    &__text {
+        display: flex;
+        align-items: center;
+        min-height: 64px;
+        padding: 8px 20px 10px;
+        text-decoration: none;
+        font-size: 16px;
+        line-height: 20px;
+        font-weight: 600;
+        color: #fff;
+        background: #404040;
+    }
+}

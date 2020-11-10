@@ -1,0 +1,17 @@
+@mixin media-max($resolution) {
+    @media (max-width: $resolution - 1px) {
+        @content;
+    }
+}
+
+@mixin media-min($resolution) {
+    @media (min-width: $resolution) {
+        @content;
+    }
+}
+
+@mixin media-interval($resolution-min, $resolution-max) {
+    @media (min-width: $resolution-min) and (max-width: $resolution-max - 1px) {
+        @content;
+    }
+}

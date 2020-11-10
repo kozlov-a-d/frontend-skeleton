@@ -1,0 +1,60 @@
+/**
+ * Центрирует контентный блок определённой ширины
+ * по умолчанию $content-width
+ */
+@mixin l-container($max-content-width: $content-width) {
+    width: auto;
+    max-width: 100%;
+    margin: 0 $content-gap;
+
+    @media (min-width: $max-content-width + $content-gap * 2) {
+        width: 100%;
+        max-width: $max-content-width;
+        margin: 0 auto;
+    }
+}
+
+/**
+ * Делает блок на всю ширину экрана
+ */
+@mixin l-fullwidth() {
+    width: 100vw;
+    margin-left: 50%;
+    transform: translate(-50%);
+}
+
+/**
+ * Делает блок пропорциональным
+ */
+@mixin l-block-ratio($ratio: 1/2) {
+    display: block;
+    position: relative;
+    width: 100%;
+    height: 0;
+    padding: 0 0 $ratio * 100%;
+}
+
+/**
+ * Блок занимет всё пространство родителя
+ */
+@mixin l-block-full($position: absolute) {
+    position: $position;
+    left: 0;
+    top: 0;
+    display: block;
+    width: 100%;
+    height: 100%;
+}
+
+/**
+ * Картинка занимет всё пространство родителя
+ */
+@mixin l-img-full($position: absolute, $size: cover) {
+    position: $position;
+    left: 0;
+    top: 0;
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: $size;
+}

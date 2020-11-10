@@ -1,0 +1,26 @@
+@import '~styles/variables';
+@import '~styles/mixins';
+
+.form-callback {
+    margin: 0;
+
+    .form-item {
+    }
+
+    .form-btns-container {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .form-privacy-police {
+        margin-bottom: 8px;
+    }
+
+    &__btn {
+        &-submit {
+            @include btn-primary;
+        }
+    }
+
+    // какие то костыли, если надо
+}

@@ -1,0 +1,23 @@
+<div class="cart-widget">
+    <div class="cart-widget__list">
+        {% for i in 0..2 %}
+        <div class="cart-widget__item cart-widget-item">
+            <a class="cart-widget-item__img" href="{{ url.productShow }}">
+                <!-- Размер превьюшек 70x70 -->
+                <img src="http://via.placeholder.com/70x70/" alt="Name">
+            </a>
+            <div class="cart-widget-item__info">
+                <a class="cart-widget-item__title" href="{{ url.productShow }}">Product name</a>
+                <span class="cart-widget-item__count">1 шт.</span>
+                <span class="cart-widget-item__cost">2500 rub</span>
+            </div>
+        </div>
+        {% endfor %}
+    </div>
+    <div class="cart-widget__delivery">Доставка <span>Бесплатно</span></div>
+    <div class="cart-widget__total">Общая стоимость: <span>$123123</span></div>
+    <div class="cart-widget__btns">
+        <a class="cart-widget__btn-checkout" href="{{ url.orderCheckout }}">Заказать</a>
+        <a class="cart-widget__btn-cart" href="{{ url.orderCart }}">В корзину</a>
+    </div>
+</div>

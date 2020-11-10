@@ -1,0 +1,162 @@
+/********************************************************************************************/
+/* Tables ----------------------------------------------------------------------------------*/
+/* ...                                                                                      */
+/********************************************************************************************/
+
+//$tables-color-border: $color-text;
+//$nice-tables-color-border: #e8eaeb;
+//$nice-tables-color-striped: #e8eaeb;
+//$nice-tables-color-hover: darken($tables-color-striped,10%);
+
+@mixin table-default($color-border: $color-text) {
+    table {
+        border: 1px solid $color-border;
+        border-collapse: collapse;
+        border-spacing: 0;
+        border-radius: 0;
+        th {
+            border: 1px solid $color-border;
+            padding: 0;
+        }
+        td {
+            border: 1px solid $color-border;
+            padding: 0;
+        }
+
+        &.noborder {
+            border: none;
+            td,
+            th {
+                border: none;
+            }
+        }
+
+        &.cellpadding {
+            &_5 {
+                td,
+                th {
+                    padding: 5px;
+                }
+            }
+            &_7 {
+                td,
+                th {
+                    padding: 7px;
+                }
+            }
+            &_10 {
+                td,
+                th {
+                    padding: 10px;
+                }
+            }
+            &_15 {
+                td,
+                th {
+                    padding: 15px;
+                }
+            }
+        }
+    }
+}
+
+@mixin table-nice(
+    $_color-border: #e8eaeb,
+    $_color-striped: #e8eaeb,
+    $_color-hover: darken(#e8eaeb, 10%),
+    $_padding: '15px 18px',
+    $_border-radius: '5px'
+) {
+    .nice_table {
+        border: none;
+        border-radius: 5px;
+
+        th {
+            padding: $_padding;
+            border: none;
+        }
+        td {
+            text-align: left;
+            padding: $_padding;
+            border: none;
+            border-bottom: 1px solid $_color-border;
+        }
+
+        @content;
+
+        &.-striped {
+            tr:nth-child(2n) {
+                background: $_color-striped;
+            }
+        }
+
+        &.-hover-row {
+            tr {
+                transition: 0.2s;
+                &:hover {
+                    background: $_color-hover;
+                }
+            }
+        }
+
+        &.-hover-col {
+            overflow: hidden;
+            td,
+            th {
+                position: relative;
+                &:after {
+                    content: '';
+                    transition: 0.2s;
+                }
+                &:hover:after {
+                    content: '';
+                    position: absolute;
+                    background: $_color-hover;
+                    left: 0;
+                    top: -5000px;
+                    height: 10000px;
+                    width: 100%;
+                    z-index: -1;
+                }
+            }
+        }
+
+        &.-hover-cross {
+            overflow: hidden;
+            tbody {
+                overflow: hidden;
+            }
+            tr {
+                transition: 0.2s;
+                &:hover {
+                    background: $_color-hover;
+                }
+            }
+            td,
+            th {
+                position: relative;
+                &:after {
+                    content: '';
+                    transition: 0.2s;
+                }
+                &:hover:after {
+                    content: '';
+                    position: absolute;
+                    background: $_color-hover;
+                    left: 0;
+                    top: -5000px;
+                    height: 10000px;
+                    width: 100%;
+                    z-index: -1;
+                }
+            }
+        }
+    }
+}
+@mixin table-responsive() {
+    .table-responsive {
+        &__scroll {
+            overflow-x: auto;
+        }
+    }
+}

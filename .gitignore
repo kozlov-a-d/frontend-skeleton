@@ -1,0 +1,41 @@
+###> symfony/framework-bundle ###
+/.env
+/public/bundles/
+/var/
+/vendor/
+###< symfony/framework-bundle ###
+
+###> symfony/phpunit-bridge ###
+.phpunit
+/phpunit.xml
+###< symfony/phpunit-bridge ###
+
+###> symfony/web-server-bundle ###
+/.web-server-pid
+###< symfony/web-server-bundle ###
+
+*.DS_Store
+*.sql.gz
+/.idea/
+/config/parameters.yaml
+/frontend/assets/translations/*
+#!frontend/assets/translations/messages/
+/lib/
+/node_modules/
+/frontend/backstop/bitmaps_test/*
+/public/*.html
+/public/assets/build/
+/public/assets/build-dev/
+/public/assets/components/
+/public/assets/fonts/
+/public/assets/node_modules/
+/public/cache/*
+!public/cache/.gitkeep
+/public/files/images/*
+!public/files/images/.gitkeep
+/public/files/import/
+/public/files/market/
+/public/files/uploads/*
+!public/files/uploads/.gitkeep
+/reports/
+/src/Command/TestCommand.php

@@ -1,0 +1,86 @@
+.btn {
+    &-primary {
+        @include btn;
+        @include btn-fill($color-primary, $color-primary-dark);
+        @include btn-color(#fff);
+
+        &-border {
+            @include btn;
+            @include btn-fill(#fff, $color-primary-dark);
+            @include btn-border($color-primary, $color-primary-dark);
+            @include btn-color($color-primary, #fff);
+        }
+    }
+
+    &-secondary {
+        @include btn;
+        @include btn-fill($color-secondary, $color-secondary-dark);
+        @include btn-color(#fff);
+
+        &-border {
+            @include btn;
+            @include btn-fill(#fff, $color-secondary-dark);
+            @include btn-border($color-secondary, $color-secondary-dark);
+            @include btn-color($color-secondary, #fff);
+        }
+    }
+
+    // &-danger {
+    //     @include btn;
+    //     @include btn-fill($color-danger, $color-danger-dark);
+    //     @include btn-color(#fff);
+
+    //     &-border {
+    //         @include btn;
+    //         @include btn-fill(#fff, $color-danger-dark);
+    //         @include btn-border($color-danger, $color-danger-dark);
+    //         @include btn-color($color-danger, #fff);
+    //     }
+    // }
+
+    // &-warn {
+    //     @include btn;
+    //     @include btn-fill($color-warn, $color-warn-dark);
+    //     @include btn-color(#fff);
+
+    //     &-border {
+    //         @include btn;
+    //         @include btn-fill(#fff, $color-warn-dark);
+    //         @include btn-border($color-warn, $color-warn-dark);
+    //         @include btn-color($color-warn, #fff);
+    //     }
+    // }
+
+    // &-success {
+    //     @include btn;
+    //     @include btn-fill($color-success, $color-success-dark);
+    //     @include btn-color(#fff);
+
+    //     &-border {
+    //         @include btn;
+    //         @include btn-fill(#fff, $color-success-dark);
+    //         @include btn-border($color-success, $color-success-dark);
+    //         @include btn-color($color-success, #fff);
+    //     }
+    // }
+
+    &-center {
+        @include btn-center;
+    }
+
+    &-fullwidth {
+        @include btn-fullwidth;
+    }
+}
+
+a,
+button {
+    &.-loading {
+        pointer-events: none; // чтобы случайно не кликнули второй раз, пока грузится
+        color: transparent;
+        background-image: url(~images/loader.svg);
+        background-position: center center;
+        background-repeat: no-repeat;
+        background-size: 26px 26px;
+    }
+}

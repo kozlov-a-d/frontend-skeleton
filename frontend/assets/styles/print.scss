@@ -1,0 +1,45 @@
+@media print {
+    
+    *{
+        color: #000 !important;
+    }
+
+    .no-print,
+    .header,
+    .footer,
+    .breadcrumbs,
+    .pagination,
+    form{
+        display: none !important;
+        visibility: hidden !important;
+    }
+
+    /*********************** jivosite  ***********************/
+    jdiv,
+    .jivo_shadow,
+    .globalClass_ET,
+    #jivo-iframe-container,
+    .jivo-iframe-container-bottomm #jivo-mouse-tracker,
+    #jivo-mouse-tracker {
+        display: none !important;
+        visibility: hidden !important;
+    }
+
+    #jivo-iframe-container {
+        visibility: hidden !important;
+    }
+
+    #jivo_container {
+        visibility: hidden !important;
+    }
+
+    [class^="jivo"] {
+        display: none !important;
+        visibility: hidden !important;
+    }
+
+    [id^="jivo"] {
+        display: none !important;
+        visibility: hidden !important;
+    }
+}

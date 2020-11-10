@@ -1,0 +1,112 @@
+@import '~styles/variables';
+@import '~styles/mixins';
+
+.footer {
+    &__menu {
+        background: #cccccc;
+    }
+
+    &__bottom {
+        padding: 40px 20px;
+        text-align: center;
+        background: #1e1f26;
+        color: #d0e1f9;
+    }
+}
+
+.menu-footer {
+    &__container {
+        @include l-container;
+        padding-top: 40px;
+        padding-bottom: 40px;
+    }
+
+    ul {
+        list-style: none;
+        margin: 0;
+        padding: 0;
+
+        @media (min-width: $md) {
+            display: flex;
+            justify-content: space-between;
+        }
+    }
+
+    li {
+        &.is-active {
+            & > a {
+                color: var(--color-primary);
+            }
+        }
+
+        &.-has-dropdown {
+            & > a {
+                @media (max-width: $md) {
+                    position: relative;
+                    display: block;
+                    padding-right: 30px;
+
+                    &:after {
+                        content: '';
+                        position: absolute;
+                        right: 0;
+                        top: 50%;
+                        margin-top: -14px;
+                        display: block;
+                        width: 14px;
+                        height: 14px;
+                        border: 3px solid var(--color-base);
+                        border-top: none;
+                        border-left: none;
+                        transform: rotate(45deg);
+                    }
+                }
+            }
+        }
+    }
+
+    a {
+        display: inline-block;
+        padding-bottom: 10px;
+        font-size: 24px;
+        text-decoration: none;
+        color: var(--color-base);
+
+        &:hover {
+            color: var(--color-primary);
+        }
+    }
+
+    & &__dropdown {
+        display: none;
+
+        @media (min-width: $md) {
+            display: block;
+        }
+
+        &.is-open {
+            display: block;
+        }
+
+        ul {
+            display: block;
+        }
+
+        li {
+            margin: 0 0 10px;
+        }
+
+        a {
+            padding-bottom: 0;
+            font-size: 16px;
+        }
+
+        &.-col-2 {
+            columns: 1;
+
+            @media (min-width: $mobile) {
+                columns: 2;
+            }
+        }
+    }
+}

@@ -1,0 +1,56 @@
+@import '~styles/variables';
+@import '~styles/mixins';
+
+.product-sorting {
+    position: relative;
+    z-index: 5;
+    margin-bottom: 30px;
+
+    &__options {
+        display: inline-block;
+        position: relative;
+
+        &:hover & {
+            &-dropdown {
+                @include smooth-dropdown-show();
+            }
+        }
+
+        &-current {
+            display: block;
+            padding: 5px 10px;
+            border: 1px solid rgba(#1e1f26, 0.4);
+            border-radius: 4px;
+            color: #2f434d;
+            background: #fff;
+            transition: $transition-default;
+        }
+
+        &-dropdown {
+            position: absolute;
+            left: 0;
+            top: 100%;
+            padding: 5px 10px;
+            border: 1px solid rgba(#1e1f26, 0.4);
+            border-radius: 4px;
+            color: #2f434d;
+            background: #fff;
+            transition: $transition-default;
+
+            @include smooth-dropdown-hide(true) {
+                transition: transform 0.15s ease-in, opacity 0.15s ease-in;
+            }
+
+            span {
+                display: block;
+                padding: 4px 0;
+                text-decoration: none;
+                cursor: pointer;
+
+                &:hover {
+                    text-decoration: underline;
+                }
+            }
+        }
+    }
+}

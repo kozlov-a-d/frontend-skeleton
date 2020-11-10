@@ -1,0 +1,145 @@
+{%  set productImg = [ {
+    img: 'http://via.placeholder.com/480x480',
+    imgThumb: 'http://via.placeholder.com/70x70',
+    imgFull: 'http://via.placeholder.com/900x600',
+    imgSize: '900x600',
+    name: 'Test name'
+},{
+    img: 'http://via.placeholder.com/480x480',
+    imgThumb: 'http://via.placeholder.com/70x70',
+    imgFull: 'http://via.placeholder.com/1900x1600',
+    imgSize: '1900x1600',
+    name: 'Test name 2'
+},{
+    img: 'http://via.placeholder.com/480x480',
+    imgThumb: 'http://via.placeholder.com/70x70',
+    imgFull: 'http://via.placeholder.com/2900x2600',
+    imgSize: '2900x2600',
+    name: 'Test name 3'
+},{
+    img: 'http://via.placeholder.com/480x480',
+    imgThumb: 'http://via.placeholder.com/70x70',
+    imgFull: 'http://via.placeholder.com/900x600',
+    imgSize: '900x600',
+    name: 'Test name 4'
+},{
+    img: 'http://via.placeholder.com/480x480',
+    imgThumb: 'http://via.placeholder.com/70x70',
+    imgFull: 'http://via.placeholder.com/900x600',
+    imgSize: '900x600',
+    name: 'Test name 3'
+},{
+    img: 'http://via.placeholder.com/480x480',
+    imgThumb: 'http://via.placeholder.com/70x70',
+    imgFull: 'http://via.placeholder.com/900x600',
+    imgSize: '900x600',
+    name: 'Test name 4'
+},{
+    img: 'http://via.placeholder.com/480x480',
+    imgThumb: 'http://via.placeholder.com/70x70',
+    imgFull: 'http://via.placeholder.com/900x600',
+    imgSize: '900x600',
+    name: 'Test name 4'
+}] %}
+
+
+<div class="product-show js-product-show">
+
+    <div class="product-show__main-line">
+
+        <div class="product-show__images">
+            {# карусель с большими превьюшками  #}
+            <div class="product-images-main">
+                <span class="product-show__label -hit">Hit</span>
+
+                {# Доступные классы -hit -sale -new -popular #}
+                {% include '../product-label/product-label.twig' with {'class': '-sale', 'text': 'Sale'} %}
+
+                {# .js-photoswipe-gallery - к этому классу цепляется скрипт для увеличения картинок, отлавливает клики на ссылки  #}
+                <div class="product-images-main__container js-product-images-main js-photoswipe-gallery">
+                    {% for item in productImg %}
+                    <div class="product-images-main__item js-item">
+                        <a href="{{ item.imgFull }}" data-size="{{ item.imgSize }}">
+                            <!-- Размер превьюшек 480x480 -->
+                            <img src="{{ item.img }}" alt="{{ item.name }}" title="{{ item.name }}">
+                        </a>
+                    </div>
+                    {% endfor %}
+                </div>
+            </div>
+
+            {# карусель с маленькими превьюшками  #}
+            <div class="product-images-thumb">
+                <div class="product-images-thumb__container js-product-images-thumb">
+                    {% for item in productImg %}
+                    <div class="product-images-thumb__item"><img src="{{ item.imgThumb }}" alt="" title=""></div>
+                    {% endfor %}
+                </div>
+            </div>
+
+        </div><!-- end .product-show__images -->
+
+        <div class="product-show__details">
+
+            <h1>Products List</h1> 
+
+            <div class="product-buy">
+                <div class="product-buy__price">
+                    <!--В поле priceCurrency указывается валюта.-->
+                    <span class="product-buy__price -current">$3000</span>
+                    <span class="product-buy__price -old">$3400</span>
+                </div>
+                <div class="product-buy__count">
+                    <input class="js-custom-number" type="text" pattern="^[ 0-9]+$" value="1">
+                </div>
+                <div class="product-buy__btns-container">
+                    <button class="product-buy__btn -quick">Quick Buy</button>
+                    <button class="product-buy__btn -add-to-cart">Book Now</button>
+                </div>
+            </div>
+
+            <div class="product-short-description">
+                <p class="-tit">About</p>
+                <p>In M/Y Notorious, Sunseeker have crafted a flawless ship that shows exactly why they’re so renowned.
+                    Built for pure luxury and style, The Sunseeker 28m, M/Y Notorious gives the feel and volume of a
+                    30m. Don’t wait around and miss the opportunity of a lifetime to feel like royalty. Notorious will
+                    have you surrounded by impeccable design, the latest in-home entertainment and deluxe cabins.</p>
+                <p>Notorious owes its brilliant design and attention to detail to Sunseeker, who’ve created an
+                    experience that is to die for. Originally built in 2008, the ship is 28 metres in length, with 6.3
+                    metre beam and 2 metre draft. Notorious has a cruise speed of 20 knots and can reach a maximum speed
+                    of 28 knots powered by two, Caterpillar engines.</p>
+            </div> 
+
+        </div><!-- end .product-show__details -->
+
+    </div><!-- end .product-show__main-line -->
+
+    <script type="application/ld+json">
+        {
+          "@context": "http://schema.org/",
+          "@type": "Product",
+          "brand": {
+            "@type": "Brand",
+            "name": "My Brand"
+          },
+          "aggregateRating": {
+            "@type": "AggregateRating",
+            "ratingValue": "4.5",
+            "reviewCount": "11"
+          },
+          "name": "Best product ever",
+          "image": ["http://site.com/upload/images/product-1", "http://site.com/upload/images/product-1"],
+          "description": "some words about the best product ever",
+          "url": "http://site.com/product-1",
+          "offers": {
+            "@type": "Offer",
+            "priceCurrency": "AED",
+            "price": "100.00",
+            "itemCondition": "new",
+            "sku": "",
+            "availability": "http://schema.org/InStock"
+          }
+        }
+        </script>
+
+</div>

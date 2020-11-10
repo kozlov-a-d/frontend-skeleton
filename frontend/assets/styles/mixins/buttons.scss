@@ -1,0 +1,77 @@
+@mixin btn() {
+    position: relative;
+    display: inline-block;
+    vertical-align: top;
+    height: $btn-height;
+    max-width: 100%;
+    padding: 0 $btn-padding;
+    border: none;
+    border-radius: $btn-border-radius;
+    font-size: $btn-font-size;
+    font-weight: $btn-font-weight;
+    line-height: $btn-height;
+    text-align: center;
+    text-decoration: none;
+    overflow: hidden;
+    cursor: pointer;
+    transition: $transition-default;
+}
+
+@mixin btn-color($color-default, $color-hover: $color-default) {
+    color: $color-default;
+    @if $color-hover != $color-default {
+        &:hover {
+            color: $color-hover;
+        }
+    }
+}
+
+@mixin btn-fill($color-default, $color-hover: $color-default) {
+    background-color: $color-default;
+    @if $color-hover != $color-default {
+        &:hover {
+            // box-shadow: inset 0 $btn-height*-1 $color-hover;
+            background-color: $color-hover;
+        }
+    }
+}
+
+@mixin btn-border($color-default, $color-hover: $color-default) {
+    border: $btn-border-width solid $color-default;
+    padding: 0 $btn-padding - $btn-border-width;
+    line-height: $btn-height - 2 * $btn-border-width;
+    @if $color-hover != $color-default {
+        &:hover {
+            border-color: $color-hover;
+        }
+    }
+}
+
+@mixin btn-center() {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 250px;
+}
+
+@mixin btn-fullwidth() {
+    width: 100%;
+}
+
+@mixin btn-primary() {
+    @include btn;
+    @include btn-fill($color-primary, $color-primary-dark);
+    @include btn-color(#fff);
+}
+
+@mixin btn-secondary() {
+    @include btn;
+    @include btn-fill($color-secondary, $color-secondary-dark);
+    @include btn-color(#fff);
+}
+
+@mixin btn-whatsapp() {
+    @include btn;
+    @include btn-fill($color-whatsapp, $color-whatsapp-hover);
+    @include btn-color(#fff);
+}

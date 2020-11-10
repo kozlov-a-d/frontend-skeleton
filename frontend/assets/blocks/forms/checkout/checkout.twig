@@ -1,0 +1,186 @@
+<!-- класс js-ajax - для отправки ajax'ом -->
+<!-- data-goal-name, data-goal-category - имя и категория цели, при успешной отправке -->
+<form action="/form-success.html" class="js-ajax" data-goal-name="Purchase" data-goal-category="Ecommerce">
+    <div class="form-checkout form-layout-item-column">
+
+        <p class="form-heading -left">Contact info</p>
+
+        <div class="form-item -name">
+            <span class="form-item__label">Name</span>
+            <div class="form-item__field">
+                <input type="text">
+                <div class="form-item__error"></div>
+            </div>
+            <div class="form-item__description"></div>
+        </div>
+
+        <div class="form-item -phone">
+            <span class="form-item__label">Phone</span>
+            <div class="form-item__field">
+                <input type="phone">
+                <div class="form-item__error">
+                    <ul><li>Error</li></ul>
+                </div>
+            </div>
+            <div class="form-item__description">Введите 10 цифр, например, + 7 999 000 00 00</div>
+        </div>
+
+        <div class="form-item -email">
+            <span class="form-item__label">Email</span>
+            <div class="form-item__field">
+                <input type="email">
+                <div class="form-item__error"></div>
+            </div>
+            <div class="form-item__description">Example: name@domain.com</div>
+        </div>
+
+        <div class="form-item -checkbox">
+            <span class="form-item__label">Получатель не Вы?</span>
+            <div class="form-item__field">
+                <label class="custom-checkbox">
+                    <input class="js-order-checkout-recipient" type="checkbox">
+                    <span></span>
+                </label>
+                <div class="form-item__error"></div>
+            </div>
+            <div class="form-item__description"></div>
+        </div>
+        
+        <!-- Получатель  -->
+        <div class="form-fragment -recipient">
+
+            <div class="form-item -name">
+                <span class="form-item__label">Recipient's name</span>
+                <div class="form-item__field">
+                    <input type="text">
+                    <div class="form-item__error"></div>
+                </div>
+                <div class="form-item__description"></div>
+            </div>
+
+            <div class="form-item -phone">
+                <span class="form-item__label">Recipient's phone</span>
+                <div class="form-item__field">
+                    <input type="phone">
+                    <div class="form-item__error">
+                        <ul><li>Error</li></ul>
+                    </div>
+                </div>
+                <div class="form-item__description">Введите 10 цифр, например, + 7 999 000 00 00</div>
+            </div>
+            
+        </div><!-- end Получатель  -->
+        
+
+        <p class="form-heading -left">Delivery info</p>
+
+        <div class="form-item">
+            <label class="custom-radio"><input type="radio" value="delivery" name="checkout-delivery" checked><span>Доставка по городу</span></label>
+            <label class="custom-radio"><input type="radio" value="pickUpAtStore" name="checkout-delivery"><span>Самовывоз</span></label>
+        </div>
+
+        <!-- Доставка  -->
+        <div class="form-fragment -delivery is-show">
+
+            <div class="form-item -date">
+                <span class="form-item__label">Delivery Date</span>
+                <div class="form-item__field">
+                    <input class="js-datepicker" type="text" placeholder="Date">
+                    <div class="form-item__error"></div>
+                </div>
+                <div class="form-item__description"></div>
+            </div>
+
+            <div class="form-item -time">
+                <span class="form-item__label">Delivery Time</span>
+                <div class="form-item__field">
+                    <select>
+                        <option value="07:15">07:15</option>
+                        <option value="07:30">07:30</option>
+                        <option value="07:45">07:45</option>
+                        <option value="08:00">08:00</option>
+                        <option value="08:15">08:15</option>
+                    </select>
+                    <div class="form-item__error"></div>
+                </div>
+                <div class="form-item__description"></div>
+            </div>
+
+            <div class="form-item -time">
+                <span class="form-item__label">Адрес доставки</span>
+                <div class="form-item__field">
+                    <textarea></textarea>
+                    <div class="form-item__error"></div>
+                </div>
+                <div class="form-item__description">Укажите, пожалуйста, улицу, номер дома, квартиры. Желательно также указать номер  подъезда и этаж.</div>
+            </div>
+
+        </div><!-- end Доставка  -->
+
+        <!-- Самовывоз  -->
+        <div class="form-fragment -pickUpAtStore">
+
+            <div class="form-item -date">
+                <span class="form-item__label">Дата самовывоза</span>
+                <div class="form-item__field">
+                    <input class="js-datepicker" type="text" placeholder="Date">
+                    <div class="form-item__error"></div>
+                </div>
+                <div class="form-item__description"></div>
+            </div>
+
+            <div class="form-item -time">
+                <span class="form-item__label">Время самовывоза</span>
+                <div class="form-item__field">
+                    <select>
+                        <option value="07:15">07:15</option>
+                        <option value="07:30">07:30</option>
+                        <option value="07:45">07:45</option>
+                        <option value="08:00">08:00</option>
+                        <option value="08:15">08:15</option>
+                    </select>
+                    <div class="form-item__error"></div>
+                </div>
+                <div class="form-item__description"></div>
+            </div>
+            
+            <div class="form-item -location">
+                <span class="form-item__label">Выберите магазин</span>
+                <div class="form-item__field">
+                    <select>
+                        <option value="shop_1">Магазин_1</option>
+                        <option value="shop_2">Магазин_2</option>
+                        <option value="shop_3">Магазин_3</option>
+                    </select>
+                    <div class="form-item__error"></div>
+                </div>
+                <div class="form-item__description"></div>
+            </div>
+
+        </div><!-- end Самовывоз  -->
+
+        <div class="form-item -time">
+            <span class="form-item__label">Дополнительная информация</span>
+            <div class="form-item__field">
+                <textarea></textarea>
+                <div class="form-item__error"></div>
+            </div>
+            <div class="form-item__description"></div>
+        </div>
+
+        <p class="form-heading -left">Payments</p>
+
+        <div class="form-item">
+            <label class="custom-radio"><input type="radio" value="1" name="checkout-payment" checked><span>Оплата наличными</span></label>
+            <label class="custom-radio"><input type="radio" value="2" name="checkout-payment"><span>Онлайн-оплата</span></label>
+        </div>
+
+        <div class="form-btns-container">
+            <div class="form-privacy-police">
+                Нажимая на кнопку, я даю согласие <br> на <a href="">обработку персональных данных</a>
+            </div>
+            <button class="form-feedback__btn-submit" type="submit">Submit</button>
+        </div>
+
+    </div>
+</form>

@@ -1,0 +1,58 @@
+@import '~styles/variables';
+@import '~styles/mixins';
+
+.gallery-albums {
+    $gap: 22px;
+    $bg-default: #3990ab;
+    $bg-hover: #40545d;
+    $img-width: 375px;
+    $img-height: 181px;
+
+    @include grid($gap);
+
+    &__item {
+        @include grid-col(1, $gap);
+        margin-bottom: $gap;
+
+        @media (min-width: $sm) {
+            @include grid-col(1/2, $gap);
+        }
+
+        @media (min-width: $md) {
+            @include grid-col(1/3, $gap);
+        }
+
+        position: relative;
+        background: $bg-default;
+        border-radius: 5px;
+        overflow: hidden;
+        transition: background $transition-time $transition-ease;
+
+        &:hover {
+            background: $bg-hover;
+        }
+
+        &-img {
+            display: block;
+            @include l-block-ratio($img-height/$img-width);
+
+            img {
+                @include l-img-full;
+            }
+        }
+
+        &-title {
+            position: relative;
+            display: flex;
+            align-items: center;
+            min-height: 80px;
+            padding: 8px 22px 13px;
+            display: block;
+            width: 100%;
+            color: #fff;
+            text-decoration: none;
+            font-size: 20px;
+            line-height: 28px;
+        }
+    }
+}

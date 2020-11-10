@@ -1,0 +1,73 @@
+@import '~styles/variables';
+@import '~styles/mixins';
+
+.page-error {
+    padding: 40px 0;
+    margin-bottom: 20px;
+    text-align: center;
+
+    &__img {
+        margin-bottom: 10px;
+    }
+
+    .icon-svg {
+        stroke: #ccc;
+        stroke-width: 0.3px;
+        fill: #ccc;
+    }
+    .icon-svg-gear {
+        font-size: 2rem;
+        width: 1em;
+    }
+
+    .spinLeft {
+        font-size: 100px;
+        animation-name: spinLeft;
+        transform-origin: center center;
+        animation-timing-function: linear;
+        animation-duration: 6000ms;
+        animation-iteration-count: infinite;
+    }
+    .spinRight {
+        font-size: 50px;
+        margin-bottom: 50px;
+        animation-duration: 4000ms;
+        animation-name: spinRight;
+        transform-origin: center center;
+        animation-timing-function: linear;
+        animation-iteration-count: infinite;
+    }
+
+    p {
+        font-size: 1.2em;
+    }
+
+    &__btn {
+        &--back {
+            @include btn-primary;
+            margin: 10px 10px;
+        }
+
+        &--to-home {
+            @include btn-secondary;
+            margin: 10px 10px;
+        }
+    }
+}
+@keyframes spinLeft {
+    from {
+        transform: rotate(0);
+    }
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+@keyframes spinRight {
+    from {
+        transform: rotate(0);
+    }
+    to {
+        transform: rotate(-360deg);
+    }
+}

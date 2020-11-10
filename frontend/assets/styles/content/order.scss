@@ -1,0 +1,17 @@
+$total: 10;
+
+@for $i from 1 through $total {
+    .order-#{$i} {
+        order: #{$i};
+    }
+}
+
+@each $breakpoint in map-keys($breakpoints-inline-class) {
+    @include media-min(map-get($breakpoints-inline-class, $breakpoint)) {
+        @for $i from 1 through $total {
+            .order-#{$breakpoint}-#{$i} {
+                order: #{$i};
+            }
+        }
+    }
+}

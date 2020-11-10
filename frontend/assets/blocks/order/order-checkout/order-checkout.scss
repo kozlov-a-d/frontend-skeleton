@@ -1,0 +1,34 @@
+@import '~styles/variables';
+@import '~styles/mixins';
+
+.order-checkout {
+    display: flex;
+    align-items: flex-start;
+    flex-direction: column;
+
+    @media (min-width: $mobile) {
+        flex-direction: row;
+    }
+
+    &__form {
+        width: 100%;
+
+        @media (max-width: $mobile) {
+            order: 2;
+        }
+    }
+
+    &__cart-widget {
+        width: 330px;
+        min-width: 330px;
+        margin-left: 50px;
+
+        @media (max-width: $mobile) {
+            order: 1;
+            width: 100%;
+            min-width: 100%;
+            margin-left: 0;
+            margin-bottom: 30px;
+        }
+    }
+}

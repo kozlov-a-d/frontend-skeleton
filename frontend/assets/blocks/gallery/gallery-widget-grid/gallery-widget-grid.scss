@@ -1,0 +1,70 @@
+@import '~styles/variables';
+@import '~styles/mixins';
+
+.gallery-widget-grid {
+    $gap: 2px;
+
+    @include l-fullwidth;
+
+    padding: 60px 0 40px;
+    // background: rgb(236, 236, 236);
+
+    &__container {
+        @include l-container;
+    }
+
+    &__header {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        margin-bottom: 20px;
+
+        h2 {
+            margin: 0;
+        }
+    }
+
+    &__content {
+        @include l-fullwidth;
+    }
+
+    &__list {
+        @include grid($gap);
+    }
+
+    &__item {
+        @include grid-col(1, $gap);
+        margin-bottom: $gap;
+        background: #ccc;
+
+        @media (min-width: $sm) {
+            @include grid-col(1/2, $gap);
+        }
+
+        @media (min-width: $md) {
+            @include grid-col(1/3, $gap);
+        }
+
+        @media (min-width: $lg) {
+            @include grid-col(1/4, $gap);
+        }
+
+        &-img {
+            position: relative;
+            display: block;
+            width: 100%;
+            height: 0;
+            padding-bottom: 100%;
+
+            img {
+                @include l-img-full;
+            }
+        }
+    }
+
+    &__btn {
+        &-more {
+            @include btn-primary;
+        }
+    }
+}

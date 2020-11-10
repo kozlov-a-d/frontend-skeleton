@@ -1,0 +1,54 @@
+@import '~styles/variables';
+@import '~styles/mixins';
+
+.template-parallax-on-mouse {
+    position: relative;
+    @include l-fullwidth;
+    overflow: hidden;
+    padding: 50px 0;
+    // background: rgb(236, 236, 236);
+
+    @media (min-width: $desktop) {
+        padding: 130px 0;
+    }
+
+    &__parallax-container {
+        position: absolute;
+        left: -15%;
+        top: -15%;
+        z-index: 0;
+        width: 130%;
+        height: 130%;
+
+        [data-parallax-on-mouse] {
+            position: absolute;
+            left: 0;
+            top: 0;
+            display: block;
+            width: 100%;
+            height: 100%;
+        }
+    }
+
+    &__container {
+        position: relative;
+        z-index: 2;
+        @include l-container;
+    }
+
+    &__header {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        margin-bottom: 20px;
+        pointer-events: none;
+
+        h2 {
+            margin: 0;
+        }
+    }
+
+    &__content {
+        pointer-events: none;
+    }
+}

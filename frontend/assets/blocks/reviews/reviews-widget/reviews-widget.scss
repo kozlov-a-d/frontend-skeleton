@@ -1,0 +1,89 @@
+@import '~styles/variables';
+@import '~styles/mixins';
+
+.reviews-widget {
+    $gap: 30px;
+
+    @include l-fullwidth;
+    position: relative;
+    background: #30454f;
+    color: #fff;
+
+    padding: 60px 0 60px;
+
+    &__container {
+        @include l-container;
+    }
+
+    &__header {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        margin-bottom: 20px;
+
+        h2 {
+            margin: 0;
+            color: #fff;
+        }
+    }
+
+    &__content {
+    }
+
+    &__list {
+    }
+
+    &__item {
+        position: relative;
+        width: 100%;
+        padding: 30px 20px;
+        margin: 0;
+        font-size: 15px;
+        color: #000000;
+        background: #fff;
+        border-radius: 10px;
+
+        @media (min-width: $sm) {
+            padding: 30px 5%;
+        }
+
+        &-header {
+            margin-bottom: 7px;
+        }
+
+        &-name {
+            font-weight: 600;
+        }
+
+        &-date {
+            display: inline-block;
+            font-size: 12px;
+            padding-left: 13px;
+            margin-left: 7px;
+            position: relative;
+            vertical-align: bottom;
+            &:before {
+                content: '';
+                display: block;
+                width: 2px;
+                height: 2px;
+                position: absolute;
+                left: 0;
+                top: 50%;
+                background: #2f434d;
+            }
+        }
+    }
+
+    &__btn {
+        &-more {
+            @include btn-primary;
+        }
+    }
+
+    .owl-carousel {
+        .owl-dots {
+            margin-top: 20px;
+        }
+    }
+}

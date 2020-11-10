@@ -1,0 +1,15 @@
+// неактуально
+.spoiler[data-mobile-only="true"]{
+
+  &__content{
+
+    &.is-opened{
+      display: block !important;
+    }
+  }
+  
+  &__btn{
+
+
+  }
+}

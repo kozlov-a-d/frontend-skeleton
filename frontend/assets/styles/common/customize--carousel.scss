@@ -1,0 +1,71 @@
+// стиль для стрелок по умолчанию
+@mixin carousel-arrow($type: prev){
+    display: inline-block;
+    width: 30px;
+    height: 30px;
+    font-size: 0;
+    border: none;
+    @if $type == prev {
+        background: url('~images/icons/arrow--prev.svg') center center no-repeat;
+    }
+    @if $type == next {
+        background: url(~images/icons/arrow--next.svg) center center no-repeat;
+    } 
+    background-size: 100% 100%; 
+    cursor: pointer;
+
+    &:hover{
+        opacity: 0.8;
+    }
+
+    &.disabled{
+        opacity: 0.6 !important;
+    }
+}
+ 
+
+[data-owl-btn-prev]{
+    @include carousel-arrow($type: prev);
+}
+
+[data-owl-btn-next]{
+    @include carousel-arrow($type: next);
+}
+
+.owl-carousel{
+
+    .owl-nav {
+
+        button{
+            &.owl-prev{
+                @include carousel-arrow($type: prev);
+            }
+        
+            &.owl-next{
+                @include carousel-arrow($type: next);
+            }
+        }
+    }
+
+    .owl-dots{
+        margin-top: 5px;
+        text-align: center;
+
+        button {
+            display: inline-block;
+            width: 14px;
+            height: 14px;
+            padding: 0;
+            margin: 4px 7px;
+            border-radius: 50%;
+            background: #88a0ab;
+            font-size: 0;
+            opacity: 1;
+            cursor: pointer;
+    
+            &.active{
+                background: #29363e;
+            }
+        }
+    }
+}

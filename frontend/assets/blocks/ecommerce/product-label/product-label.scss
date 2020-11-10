@@ -1,0 +1,27 @@
+@import '~styles/variables';
+@import '~styles/mixins';
+
+.product-label {
+    display: block;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 10;
+    min-width: 70px;
+    text-align: center;
+    padding: 5px 7px;
+    color: #000;
+    font-weight: 600;
+    &.-hit {
+        background-color: orange;
+    }
+    &.-sale {
+        background-color: red;
+    }
+    &.-new {
+        background-color: yellow;
+    }
+    &.-popular {
+        background-color: green;
+    }
+}

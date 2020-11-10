@@ -1,0 +1,40 @@
+@import '~styles/variables';
+@import '~styles/mixins';
+
+.gallery-show {
+    $gap: 2px;
+    $img-width: 389px;
+    $img-height: 244px;
+
+    @include grid($gap);
+    margin-bottom: 26px;
+
+    &__item {
+        @include grid-col(1, $gap);
+        margin-bottom: $gap;
+        display: block;
+
+        @media (min-width: $sm) {
+            @include grid-col(1/2, $gap);
+        }
+
+        @media (min-width: $md) {
+            @include grid-col(1/3, $gap);
+        }
+    }
+
+    a {
+        position: relative;
+        display: block;
+        @include l-block-ratio($img-height/$img-width);
+    }
+
+    img {
+        display: block;
+        position: absolute;
+        left: 0;
+        top: 0;
+        width: 100%;
+        height: 100%;
+    }
+}

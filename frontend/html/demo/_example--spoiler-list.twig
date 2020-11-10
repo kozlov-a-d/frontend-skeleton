@@ -1,0 +1,11 @@
+<p>Пример спойлера для списков блоков, настройки из data-атрибутов перебивают настройки в скрипте при инициализации</p>
+<div class="js-spoiler-list" 
+    data-text-opened="Hide"
+    data-text-closed="Show All"
+    data-btn-class="btn-primary"
+    data-hidden-items-selector=".js-spoiler-list-item-hidden"
+    data-hidden-resolution="1920">
+    {% for i in 0..10 %}
+    <div class="{% if loop.index > 6 %} js-spoiler-list-item-hidden {% endif %}">{{ loop.index }}</div>
+    {% endfor %}
+</div>

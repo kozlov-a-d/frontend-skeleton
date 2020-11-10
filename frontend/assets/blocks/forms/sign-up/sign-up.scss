@@ -1,0 +1,24 @@
+@import '~styles/variables';
+@import '~styles/mixins';
+
+.form-sign-up {
+    $col-width: 40px;
+    max-width: 800px;
+    margin: 50px auto 50px;
+
+    .form-item {
+        // @extend .form-item--column;
+    }
+
+    .form-btns-container {
+        @extend .form-btns-container--align-right;
+    }
+
+    &__btn {
+        &-submit {
+            @include btn-primary;
+        }
+    }
+
+    /* какие то костыли, если надо */
+}

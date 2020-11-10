@@ -1,0 +1,59 @@
+{%  set galeryItems = [ {
+    img: 'http://via.placeholder.com/389x244',
+    imgFull: 'http://via.placeholder.com/900x600',
+    imgSize: '900x600',
+    name: 'Test name 1',
+},{
+    img: 'http://via.placeholder.com/389x244',
+    imgFull: 'http://via.placeholder.com/1900x600',
+    imgSize: '1900x600',
+    name: 'Test name 2',
+},{
+    img: 'http://via.placeholder.com/389x244',
+    imgFull: 'http://via.placeholder.com/1200x600',
+    imgSize: '1200x600',
+    name: 'Test name 3',
+},{
+    img: 'http://via.placeholder.com/389x244',
+    imgFull: 'http://via.placeholder.com/900x1600',
+    imgSize: '900x1600',
+    name: 'Test name 4',
+},{
+    img: 'http://via.placeholder.com/389x244',
+    imgFull: 'http://via.placeholder.com/900x600',
+    imgSize: '900x600',
+    name: 'Test name 5',
+},{
+    img: 'http://via.placeholder.com/389x244',
+    imgFull: 'http://via.placeholder.com/900x600',
+    imgSize: '900x600',
+    name: 'Test name 6',
+},{
+    img: 'http://via.placeholder.com/389x244',
+    imgFull: 'http://via.placeholder.com/900x600',
+    imgSize: '900x600',
+    name: 'Test name 1',
+},{
+    img: 'http://via.placeholder.com/389x244',
+    imgFull: 'http://via.placeholder.com/1900x600',
+    imgSize: '1900x600',
+    name: 'Test name 2',
+},{
+    img: 'http://via.placeholder.com/389x244',
+    imgFull: 'http://via.placeholder.com/1200x600',
+    imgSize: '1200x600',
+    name: 'Test name 3',
+}] %}
+
+{# .js-photoswipe-gallery - к этому классу цепляется скрипт для увеличения картинок, отлавливает клики на ссылки  #}
+{# .no-photoswipe - ссылки с этим классом игнорируются photoswipe  #}
+{# data-size - размер увеличенной картинки  #}
+
+<div class="gallery-show js-photoswipe-gallery">
+    {% for item in galeryItems %}
+    <div class="gallery-show__item">
+        <!-- Размер превьюшек 389x244 -->
+        <a href="{{ item.imgFull }}" data-size="{{ item.imgSize }}"><img src="{{ item.img }}" alt="{{ item.name }}" title="{{ item.name }}"></a>
+    </div>
+    {% endfor %}
+</div>

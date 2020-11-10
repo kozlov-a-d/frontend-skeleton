@@ -1,0 +1,47 @@
+@import '~styles/variables';
+@import '~styles/mixins';
+
+.template-parallax-on-scroll {
+    position: relative;
+    @include l-fullwidth;
+
+    padding: 50px 0;
+    // background: rgb(236, 236, 236);
+
+    @media (min-width: $desktop) {
+        padding: 130px 0;
+    }
+
+    &__parallax-container {
+        @include l-block-full;
+        overflow: hidden;
+
+        [data-parallax-on-scroll] {
+            position: absolute;
+            left: 50%;
+            top: 0;
+            display: block;
+            transform: translateX(-50%);
+        }
+    }
+
+    &__container {
+        position: relative;
+        z-index: 2;
+        @include l-container;
+    }
+
+    &__header {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        margin-bottom: 20px;
+
+        h2 {
+            margin: 0;
+        }
+    }
+
+    &__content {
+    }
+}

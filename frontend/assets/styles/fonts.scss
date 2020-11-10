@@ -1,0 +1,145 @@
+/*====================================================================================================================*/
+/*                                                   Google Fonts                                                     */
+/*====================================================================================================================*/
+
+// TODO: возможно стоит выкачивать шрифты к нам, а не юзать cdn
+// @import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600;700&display=swap');
+
+// эксперементально выяснил, что лучше без cdn, так что заливаем их на сайт
+// шрифты можно скачать прям с гугла
+// потом гуглим какой-нибудь генератор для вебшрифтов (например https://transfonter.org/)
+// выбираем что нам нужны woff и woff2 форматы
+// выбираем нужные subset'ы (кирилица, латиница например)
+// генерим, скачиваем, подключаем
+// пробуем добавить preload'ы в head, смотрим улучшается скорость или нет
+// <link rel="preload" href="path/font-name.woff2" as="font" crossorigin />
+
+@font-face {
+    font-family: 'Open Sans', sans-serif;
+    src: url('../fonts/OpenSans-Bold.woff2') format('woff2'), url('../fonts/OpenSans-Bold.woff') format('woff');
+    font-weight: bold;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Open Sans', sans-serif;
+    src: url('../fonts/OpenSans-Regular.woff2') format('woff2'), url('../fonts/OpenSans-Regular.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Open Sans', sans-serif;
+    src: url('../fonts/OpenSans-SemiBold.woff2') format('woff2'), url('../fonts/OpenSans-SemiBold.woff') format('woff');
+    font-weight: 600;
+    font-style: normal;
+    font-display: swap;
+}
+
+/*====================================================================================================================*/
+/*                                                   Iconmoon Font                                                    */
+/*====================================================================================================================*/
+
+// шрифт сохранен в base64, чтобы убрать лишнее соединение
+// версия с файлами пока сохранена
+@font-face {
+    font-family: 'icomoon';
+    font-display: swap;
+    // src: url('../fonts/icomoon.eot?mgaeyr');
+    // src: url('../fonts/icomoon.eot?mgaeyr#iefix') format('embedded-opentype'),
+    // url('../fonts/icomoon.ttf?mgaeyr') format('truetype'),
+    // url('../fonts/icomoon.woff?mgaeyr') format('woff'),
+    // url('../fonts/icomoon.svg?mgaeyr#icomoon') format('svg');
+    src: url('data:application/font-woff;charset=utf-8;base64,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')
+        format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+
+[class^='icon-'],
+[class*=' icon-'] {
+    /* use !important to prevent issues with browser extensions that change fonts */
+    font-family: 'icomoon' !important;
+    speak: none;
+    font-style: normal;
+    font-weight: normal;
+    font-variant: normal;
+    text-transform: none;
+    line-height: 1;
+    /* Better Font Rendering =========== */
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    &:before {
+        font-family: 'icomoon' !important;
+    }
+}
+
+.icon-vkontakte:before {
+    content: '\e900';
+}
+
+.icon-facebook:before {
+    content: '\e901';
+}
+
+.icon-instagram:before {
+    content: '\e902';
+}
+
+.icon-twitter:before {
+    content: '\e903';
+}
+
+.icon-youtube2:before {
+    content: '\e904';
+}
+
+.icon-youtube:before {
+    content: '\e905';
+}
+
+.icon-linkedin:before {
+    content: '\e906';
+}
+
+.icon-google:before {
+    content: '\e907';
+}
+
+.icon-flickr:before {
+    content: '\e908';
+}
+
+.icon-mailru:before {
+    content: '\e909';
+}
+
+.icon-pinterest:before {
+    content: '\e90a';
+}
+
+.icon-tumblr:before {
+    content: '\e90b';
+}
+
+.icon-odnoklassniki:before {
+    content: '\e90c';
+}
+
+.icon-whatsapp:before {
+    content: '\e90d';
+}
+
+.icon-viber:before {
+    content: '\e90e';
+}
+
+.icon-telegram:before {
+    content: '\e90f';
+}
+
+.icon-skype:before {
+    content: '\e910';
+}
